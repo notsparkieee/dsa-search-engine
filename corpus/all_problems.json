@@ -1,0 +1,1002 @@
+[
+  {
+    "title": "Lexicographic Partition",
+    "url": "https://codeforces.com/problemset/problem/2124/I",
+    "description": "   Given an array aa, define f(a)f(a) as follows:   Let kk be an integer with 1≤k≤n1 \\leq k \\leq n.  Partition aa into kk subarrays∗^{\\text{∗}} s1,s2,…,sks_1,s_2,\\ldots,s_k such that s1+s2+…+sk=as_1+s_2+\\ldots+s_k=a. Here, ++ represents array concatenation.  Let bb be an empty array. For each ii from 11 to kk in order, append the minimum element of sis_i to the end of bb.  Over all possible kk and partitions, f(a)f(a) is the value of kk such that there exists a partition that produces the lexicographically largest bb†^{\\text{†}}. You are given nn integers x1,x2,…,xnx_1,x_2,\\ldots,x_n. Please determine if there exists a permutation‡^{\\text{‡}} aa such that f([a1,a2,…,ai])=xif([a_1,a_2,\\ldots,a_i])=x_i for each 1≤i≤n1 \\leq i \\leq n. If there is a permutation, print one. If there are multiple possible answers, you may output any one.∗^{\\text{∗}}An array cc is a subarray of an array dd if cc can be obtained from dd by the deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end. †^{\\text{†}}An array cc is lexicographically smaller than an array dd if and only if one of the following holds:   cc is a prefix of dd, but c≠dc \\ne d; or  in the first position where cc and dd differ, the array cc has a smaller element than the corresponding element in dd.  ‡^{\\text{‡}}A permutation of length nn is an array consisting of nn distinct integers from 11 to nn in arbitrary order. For example, [2,3,1,5,4][2,3,1,5,4] is a permutation, but [1,2,2][1,2,2] is not a permutation (22 appears twice in the array), and [1,3,4][1,3,4] is also not a permutation (n=3n=3 but there is 44 in the array). "
+  },
+  {
+    "title": "Longest Good Subsequence",
+    "url": "https://codeforces.com/problemset/problem/2124/H",
+    "description": "  Call an array bb of size mm good if the following conditions hold:   1≤bi≤i1 \\leq b_i \\leq i for each 1≤i≤m1 \\leq i \\leq m.  There exists a permutation∗^{\\text{∗}} pp of size mm such that for each 1≤i≤m1 \\leq i \\leq m, bib_i is the smallest integer where min\\min(p_{b_i}, p_{b_i+1}, \\ldots, p_i)=p_i. For example, the array [1,1,3,3,5][1,1,3,3,5] is good (where the permutation p=[2,1,5,3,4]p=[2,1,5,3,4] satisfies the second requirement), but the array [1,1,2][1,1,2] isn't.Note the empty array is considered to be good.You are given an array aa of size nn. Find the length of the longest good subsequence^{\\text{†}}^{\\text{†}} of aa.^{\\text{∗}}^{\\text{∗}}A permutation of length mm is an array consisting of mm distinct integers from 11 to mm in arbitrary order. For example, [2,3,1,5,4][2,3,1,5,4] is a permutation, but [1,2,2][1,2,2] is not a permutation (22 appears twice in the array), and [1,3,4][1,3,4] is also not a permutation (m=3m=3 but there is 44 in the array). ^{\\text{†}}^{\\text{†}}A sequence cc is a subsequence of a sequence dd if cc can be obtained from dd by the deletion of several (possibly, zero or all) element from arbitrary positions. "
+  },
+  {
+    "title": "Maximise Sum",
+    "url": "https://codeforces.com/problemset/problem/2124/G",
+    "description": "This problem differs from problem B. In this problem, you must output the maximum sum of prefix minimums over all operations that cost at least xx for each integer xx from 00 to n−1n-1.You are given an array aa of length nn, with elements satisfying \\boldsymbol{0 \\le a_i \\le n}\\boldsymbol{0 \\le a_i \\le n}. You can perform the following operation at most once:  Choose two indices ii and jj such that i < ji < j. Set a_i := a_i + a_ja_i := a_i + a_j. Then, set a_j = 0a_j = 0. Let the cost of one operation be the value of j-ij-i. The cost of not performing an operation is 00.For each integer xx from 00 to n-1n-1 inclusive, output the maximum possible value of \\min(a_1) + \\min(a_1,a_2) + \\ldots + \\min(a_1, a_2, \\ldots, a_n)\\min(a_1) + \\min(a_1,a_2) + \\ldots + \\min(a_1, a_2, \\ldots, a_n) over all possible operations that have a cost of at least xx."
+  },
+  {
+    "title": "Appending Permutations (Hard Version)",
+    "url": "https://codeforces.com/problemset/problem/2124/F2",
+    "description": " This is the hard version of the problem. The difference between the versions is that in this version, n≤5000n \\leq 5000. You can hack only if you solved all versions of this problem. You are given an initially empty array aa. You may perform the following operation any number of times:  Choose an integer s≥1s \\ge 1 and append a cyclic shift of the array [1,2,…,s][1, 2, \\ldots, s] to the end of aa. Formally, select integers ss and rr such that 1≤r≤s1 \\le r \\le s, and append the array [r,r+1,…,s,1,2,…,r−1] [r, r+1, \\ldots, s, 1, 2, \\ldots, r-1]  to the end of aa.  You are also given an integer nn and mm restrictions of the form ai≠xa_i \\ne x. That is, for each of the mm restrictions, the value at position ii in the final array must not be equal to xx.Your task is to count the number of distinct arrays of length exactly nn that can be constructed using the allowed operation and satisfy all of the given restrictions. Two arrays are considered different if they differ at any position from 11 to nn.Print the answer modulo 998244353998\\,244\\,353."
+  },
+  {
+    "title": "Appending Permutations (Easy Version)",
+    "url": "https://codeforces.com/problemset/problem/2124/F1",
+    "description": " This is the easy version of the problem. The difference between the versions is that in this version, n≤100n \\leq 100. You can hack only if you solved all versions of this problem. You are given an initially empty array aa. You may perform the following operation any number of times:  Choose an integer s≥1s \\ge 1 and append a cyclic shift of the array [1,2,…,s][1, 2, \\ldots, s] to the end of aa. Formally, select integers ss and rr such that 1≤r≤s1 \\le r \\le s, and append the array [r,r+1,…,s,1,2,…,r−1] [r, r+1, \\ldots, s, 1, 2, \\ldots, r-1]  to the end of aa.  You are also given an integer nn and mm restrictions of the form ai≠xa_i \\ne x. That is, for each of the mm restrictions, the value at position ii in the final array must not be equal to xx.Your task is to count the number of distinct arrays of length exactly nn that can be constructed using the allowed operation and satisfy all of the given restrictions. Two arrays are considered different if they differ at any position from 11 to nn.Print the answer modulo 998244353998\\,244\\,353."
+  },
+  {
+    "title": "Make it Zero",
+    "url": "https://codeforces.com/problemset/problem/2124/E",
+    "description": "You are given an array aa, consisting of nn positive integers. You are allowed to do the following operation:   Select an array bb of size nn such that the following properties hold:  0≤bi≤ai0 \\leq b_i \\leq a_i for each 1≤i≤n1 \\leq i \\leq n  There exists an index 1≤i<n1\\leq i < n such that b1+b2+…+bi=bi+1+bi+2+…+bnb_1+b_2+\\ldots+b_i=b_{i+1}+b_{i+2}+\\ldots+b_n. That is, the sum of the prefix of length ii is equal to the sum of the suffix of length n−in-i.   Then, subtract bib_i from aia_i for each 1≤i≤n1 \\leq i \\leq n. Your task is to change all the elements to 00. Find the minimum number of operations required. Then, output a way to perform the operations. If it is impossible to change all the elements of aa to 00 no matter how many operations are used, print −1-1 instead. It can be shown that under the constraints of this problem, the smallest number of operations required is at most 1717."
+  },
+  {
+    "title": "Make a Palindrome",
+    "url": "https://codeforces.com/problemset/problem/2124/D",
+    "description": "You are given an array aa of size nn, and an integer kk. You may perform the following operation any number of times:   Select two integers ll and rr (1≤l≤r≤|a|)(1 \\le l \\le r \\le |a|) such that r−l+1≥kr-l+1 \\geq k.  Then, select an index ii such that l≤i≤rl\\leq i \\leq r where aia_i is the kk-th smallest number out of the subarray [al,al+1,…,ar][a_l,a_{l+1},\\ldots,a_r]. If there are multiple possible ii, you may select any. For example, consider a=[1,2,2,1,3],l=1,r=5a = [1, 2, 2, 1, 3], l = 1, r = 5 and k=3k = 3, the possible candidates of ii are indices 22 and 33.  Then, delete aia_i from aa, concatenating the remaining parts of the array. Determine if it is possible to get an array that is a palindrome∗^{\\text{∗}} after any number of operations. Note that an empty array is considered a palindrome. ∗^{\\text{∗}}An array b=[b1,b2,…,bm]b=[b_1,b_2,\\ldots,b_m] is a palindrome if for each 1≤i≤m1 \\leq i \\leq m, bi=bm+1−ib_i=b_{m+1-i}."
+  },
+  {
+    "title": "Subset Multiplication",
+    "url": "https://codeforces.com/problemset/problem/2124/C",
+    "description": "Alice has an array aa, consisting of nn positive integers. The array satisfies the beautiful property that aia_i divides ai+1a_{i+1} for each 1≤i≤n−11 \\leq i \\leq n - 1. Bob sees Alice's beautiful array and is jealous. To sabotage her, Bob first creates an array bb of size nn such that bi=aib_i=a_i for each 1≤i≤n1 \\leq i \\leq n. Then, he chooses a positive integer xx and multiplies some (possibly none, possibly all) elements in bb by xx. Formally, he chooses a (possibly-empty) subset S⊆{1,2,…,n}S\\subseteq\\{1,2,\\ldots,n\\}, and for each i∈Si\\in S, he sets bi:=bi⋅xb_i:=b_i\\cdot x. You are given an array bb, but you don't know array aa and the chosen number xx. Please output any integer xx that Bob could choose, so that multiplying some subset of elements of the correct array aa by xx would result in array bb. It is guaranteed that the answer exists. If there are multiple possible integers, you can output any of them."
+  },
+  {
+    "title": "Minimise Sum",
+    "url": "https://codeforces.com/problemset/problem/2124/B",
+    "description": "This problem differs from problem G. In this problem, you must output the minimum sum of prefix minimums after at most one operation.You are given an array aa of length nn, with elements satisfying 0≤ai≤n\\boldsymbol{0 \\le a_i \\le n}. You can perform the following operation at most once:  Choose two indices ii and jj such that i<ji < j. Set ai:=ai+aja_i := a_i + a_j. Then, set aj=0a_j = 0. Output the minimum possible value of min(a1)+min(a1,a2)+…+min(a1,a2,…,an)\\min(a_1) + \\min(a_1,a_2) + \\ldots + \\min(a_1, a_2, \\ldots, a_n) that you can get."
+  },
+  {
+    "title": "Deranged Deletions",
+    "url": "https://codeforces.com/problemset/problem/2124/A",
+    "description": "Call an array bb of length mm a derangement if the following property holds:  Let cc be an array of length mm such that ci=bic_i = b_i over all 1≤i≤m1 \\leq i \\leq m.  Sort cc in non-decreasing order.  If bi≠cib_i\\neq c_i over all 1≤i≤m1\\leq i \\leq m, then bb is a derangement. For example,  If b=[4,8,3,1]b = [4,8,3,1], then c=[1,3,4,8]c = [1, 3, 4, 8] after getting sorted. Since bi≠cib_i \\neq c_i in all positions, bb is a derangement.  If b=[3,2,1]b = [3,2,1], then c=[1,2,3]c = [1, 2, 3] after getting sorted. Since b2=c2b_2 = c_2, bb is not a derangement. You are given an array aa of length nn. In one operation, you can delete an element from aa. The order of the remaining elements is preserved after each deletion.Output whether it is possible to perform some (possibly none) operations such that the remaining elements form a derangement. If it is possible, output any possible remaining array. The remaining array must be non-empty."
+  },
+  {
+    "title": "Modular Sorting",
+    "url": "https://codeforces.com/problemset/problem/2123/G",
+    "description": "You are given an integer mm (2≤m≤5⋅1052\\leq m\\leq 5\\cdot 10^5) and an array aa consisting of nonnegative integers smaller than mm.Answer queries of the following form:   11 ii xx: assign ai:=xa_i := x  22 kk: in one operation, you may choose an element aia_i and assign a_i := (a_i + k) \\pmod ma_i := (a_i + k) \\pmod m^{\\text{∗}}^{\\text{∗}} — determine if there exists some sequence of (possibly zero) operations to make aa nondecreasing^{\\text{†}}^{\\text{†}}. Note that instances of query 22 are independent; that is, no actual operations are taking place. Instances of query 11 are persistent.^{\\text{∗}}^{\\text{∗}}a\\pmod ma\\pmod m is defined as the unique integer bb such that 0\\leq b<m0\\leq b<m and a-ba-b is an integer multiple of mm.^{\\text{†}}^{\\text{†}}An array aa of size nn is called nondecreasing if and only if a_i\\leq a_{i+1}a_i\\leq a_{i+1} for all 1\\leq i<n1\\leq i<n."
+  },
+  {
+    "title": "Minimize Fixed Points",
+    "url": "https://codeforces.com/problemset/problem/2123/F",
+    "description": "Call a permutation∗^{\\text{∗}} pp of length nn good if gcd(pi,i)\\gcd(p_i, i)†^{\\text{†}} >1 > 1 for all 2≤i≤n2 \\leq i \\leq n. Find a good permutation with the minimum number of fixed points‡^{\\text{‡}} across all good permutations of length nn. If there are multiple such permutations, print any of them.∗^{\\text{∗}} A permutation of length nn is an array that contains every integer from 11 to nn exactly once, in any order. †^{\\text{†}}gcd(x,y)\\gcd(x, y) denotes the greatest common divisor (GCD) of xx and yy.‡^{\\text{‡}}A fixed point of a permutation pp is an index jj (1≤j≤n1\\leq j\\leq n) such that pj=jp_j = j."
+  },
+  {
+    "title": "MEX Count",
+    "url": "https://codeforces.com/problemset/problem/2123/E",
+    "description": "Define the MEX\\mathrm{MEX} (minimum excluded value) of an array to be the smallest nonnegative integer not present in the array. For example,  MEX([2,2,1])=0\\mathrm{MEX}([2, 2, 1]) = 0 because 00 is not in the array.  MEX([3,1,0,1])=2\\mathrm{MEX}([3, 1, 0, 1]) = 2 because 00 and 11 are in the array but 22 is not.  MEX([0,3,1,2])=4\\mathrm{MEX}([0, 3, 1, 2]) = 4 because 00, 11, 22, and 33 are in the array but 44 is not. You are given an array aa of size nn of nonnegative integers.For all kk (0≤k≤n0\\leq k \\leq n), count the number of possible values of MEX(a)\\mathrm{MEX}(a) after removing exactly kk values from aa."
+  },
+  {
+    "title": "Binary String Battle",
+    "url": "https://codeforces.com/problemset/problem/2123/D",
+    "description": "Alice and Bob are given a binary string ss of length nn, and an integer kk (1≤k<n1\\leq k < n).Alice wins if she is able to transform all characters of ss into zeroes. If Alice is unable to win in a finite number of moves, then Bob wins.Alice and Bob take turns, with Alice going first.   On Alice's turn, she may choose any subsequence∗^{\\text{∗}} of length kk in ss, then set all characters in that subsequence to zero.  On Bob's turn, he may choose any substring†^{\\text{†}} of length kk in ss, then set all characters in that substring to one. Note that Alice wins if the string consists of all zeros at any point during the game, including in between Alice's and Bob's turns.Determine who wins with optimal play.∗^{\\text{∗}}A subsequence of a string ss is a set of characters in ss. Note that these characters do not have to be adjacent.†^{\\text{†}}A substring of a string ss is a contiguous group of characters in ss. Note that these characters must be adjacent."
+  },
+  {
+    "title": "Prefix Min and Suffix Max",
+    "url": "https://codeforces.com/problemset/problem/2123/C",
+    "description": "You are given an array aa of distinct integers.In one operation, you may either:   choose a nonempty prefix∗^{\\text{∗}} of aa and replace it with its minimum value, or  choose a nonempty suffix†^{\\text{†}} of aa and replace it with its maximum value. Note that you may choose the entire array aa.For each element aia_i, determine if there exists some sequence of operations to transform aa into [ai][a_i]; that is, make the array aa consist of only one element, which is aia_i. Output your answer as a binary string of length nn, where the ii-th character is 11 if there exists a sequence to transform aa into [ai][a_i], and 00 otherwise.∗^{\\text{∗}}A prefix of an array is a subarray consisting of the first kk elements of the array, for some integer kk.†^{\\text{†}}A suffix of an array is a subarray consisting of the last kk elements of the array, for some integer kk."
+  },
+  {
+    "title": "Tournament",
+    "url": "https://codeforces.com/problemset/problem/2123/B",
+    "description": "You are given an array of integers a1,a2,…,ana_1,a_2,\\dots,a_n. A tournament is held with nn players. Player ii has strength aia_i.While more than kk players remain,   Two remaining players are chosen at random;  Then the chosen player with the lower strength is eliminated. If the chosen players have the same strength, one is eliminated at random. Given integers jj and kk (1≤j,k≤n1 \\leq j,k \\leq n), determine if there is any way for player jj to be one of the last kk remaining players."
+  },
+  {
+    "title": "Blackboard Game",
+    "url": "https://codeforces.com/problemset/problem/2123/A",
+    "description": "Initially, the integers from 00 to n−1n-1 are written on a blackboard.In one round,   Alice chooses an integer aa on the blackboard and erases it;  then Bob chooses an integer bb on the blackboard such that a+b≡3(mod4)a+b \\equiv 3 \\pmod 4∗^{\\text{∗}} and erases it. Rounds take place in succession until a player is unable to make a move — the first player who is unable to make a move loses. Determine who wins with optimal play. ∗^{\\text{∗}}We define that x≡y(modm)x\\equiv y\\pmod m whenever x−yx-y is an integer multiple of mm."
+  },
+  {
+    "title": "Ice Baby",
+    "url": "https://codeforces.com/problemset/problem/2121/H",
+    "description": "The longest non-decreasing subsequence of an array of integers a1,a2,…,ana_1, a_2, \\ldots, a_n is the longest sequence of indices 1≤i1<i2<…<ik≤n1 \\leq i_1 < i_2 < \\ldots < i_k \\leq n such that ai1≤ai2≤…≤aika_{i_1} \\leq a_{i_2} \\leq \\ldots \\leq a_{i_k}. The length of the sequence is defined as the number of elements in the sequence. For example, the length of the longest non-decreasing subsequence of the array a=[3,1,4,1,2]a = [3, 1, 4, 1, 2] is 33.You are given two arrays of integers l1,l2,…,lnl_1, l_2, \\ldots, l_n and r1,r2,…,rnr_1, r_2, \\ldots, r_n. For each 1≤k≤n1 \\le k \\le n, solve the following problem: Consider all arrays of integers aa of length kk, such that for each 1≤i≤k1 \\leq i \\leq k, it holds that li≤ai≤ril_i \\leq a_i \\leq r_i. Find the maximum length of the longest non-decreasing subsequence among all such arrays."
+  },
+  {
+    "title": "Gangsta",
+    "url": "https://codeforces.com/problemset/problem/2121/G",
+    "description": "You are given a binary string s1s2…sns_1s_2 \\ldots s_n of length nn. A string ss is called binary if it consists only of zeros and ones.For a string pp, we define the function f(p)f(p) as the maximum number of occurrences of any character in the string pp. For example, f(00110)=3f(00110) = 3, f(01)=1f(01) = 1.You need to find the sum f(slsl+1…sr)f(s_ls_{l+1} \\ldots s_r) for all pairs 1≤l≤r≤n1 \\leq l \\leq r \\leq n."
+  },
+  {
+    "title": "Yamakasi",
+    "url": "https://codeforces.com/problemset/problem/2121/F",
+    "description": "You are given an array of integers a1,a2,…,ana_1, a_2, \\ldots, a_n and two integers ss and xx. Count the number of subsegments of the array whose sum of elements equals ss and whose maximum value equals xx.More formally, count the number of pairs 1≤l≤r≤n1 \\leq l \\leq r \\leq n such that: al+al+1+…+ar=sa_l + a_{l + 1} + \\ldots + a_r = s.  max(al,al+1,…,ar)=x\\max(a_l, a_{l + 1}, \\ldots, a_r) = x. "
+  },
+  {
+    "title": "Sponsor of Your Problems",
+    "url": "https://codeforces.com/problemset/problem/2121/E",
+    "description": "For two integers aa and bb, we define f(a,b)f(a, b) as the number of positions in the decimal representation of the numbers aa and bb where their digits are the same. For example, f(12,21)=0f(12, 21) = 0, f(31,37)=1f(31, 37) = 1, f(19891,18981)=2f(19891, 18981) = 2, f(54321,24361)=3f(54321, 24361) = 3.You are given two integers ll and rr of the same length in decimal representation. Consider all integers l≤x≤rl \\leq x \\leq r. Your task is to find the minimum value of f(l,x)+f(x,r)f(l, x) + f(x, r)."
+  },
+  {
+    "title": "1709",
+    "url": "https://codeforces.com/problemset/problem/2121/D",
+    "description": "You are given two arrays of integers a1,a2,…,ana_1, a_2, \\ldots, a_n and b1,b2,…,bnb_1, b_2, \\ldots, b_n. It is guaranteed that each integer from 11 to 2⋅n2 \\cdot n appears in exactly one of the arrays.You need to perform a certain number of operations (possibly zero) so that both of the following conditions are satisfied: For each 1≤i<n1 \\leq i < n, it holds that ai<ai+1a_i < a_{i + 1} and bi<bi+1b_i < b_{i + 1}.  For each 1≤i≤n1 \\leq i \\leq n, it holds that ai<bia_i < b_i. During each operation, you can perform exactly one of the following three actions: Choose an index 1≤i<n1 \\leq i < n and swap the values aia_i and ai+1a_{i + 1}.  Choose an index 1≤i<n1 \\leq i < n and swap the values bib_i and bi+1b_{i + 1}. Choose an index 1≤i≤n1 \\leq i \\leq n and swap the values aia_i and bib_i.You do not need to minimize the number of operations, but the total number must not exceed 17091709. Find any sequence of operations that satisfies both conditions."
+  },
+  {
+    "title": "Those Who Are With Us",
+    "url": "https://codeforces.com/problemset/problem/2121/C",
+    "description": "You are given a matrix of integers with nn rows and mm columns. The cell at the intersection of the ii-th row and the jj-th column contains the number aija_{ij}.You can perform the following operation exactly once: Choose two numbers 1≤r≤n1 \\leq r \\leq n and 1≤c≤m1 \\leq c \\leq m. For all cells (i,j)(i, j) in the matrix such that i=ri = r or j=cj = c, decrease aija_{ij} by one.You need to find the minimal possible maximum value in the matrix aa after performing exactly one such operation."
+  },
+  {
+    "title": "Above the Clouds",
+    "url": "https://codeforces.com/problemset/problem/2121/B",
+    "description": "You are given a string ss of length nn, consisting of lowercase letters of the Latin alphabet. Determine whether there exist three non-empty strings aa, bb, and cc such that: a+b+c=sa + b + c = s, meaning the concatenation∗^{\\text{∗}} of strings aa, bb, and cc equals ss. The string bb is a substring†^{\\text{†}} of the string a+ca + c, which is the concatenation of strings aa and cc. ∗^{\\text{∗}}Concatenation of strings aa and bb is defined as the string a+b=a1a2…apb1b2…bqa + b = a_1a_2 \\ldots a_pb_1b_2 \\ldots b_q, where pp and qq are the lengths of strings aa and bb, respectively. For example, the concatenation of the strings \"code\" and \"forces\" is \"codeforces\". †^{\\text{†}}A string aa is a substring of a string bb if aa can be obtained from bb by the deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end. "
+  },
+  {
+    "title": "Letter Home",
+    "url": "https://codeforces.com/problemset/problem/2121/A",
+    "description": "You are given an array of distinct integers x1,x2,…,xnx_1, x_2, \\ldots, x_n and an integer ss. Initially, you are at position pos=spos = s on the XX axis. In one step, you can perform exactly one of the following two actions: Move from position pospos to position pos+1pos + 1.  Move from position pospos to position pos−1pos - 1. A sequence of steps will be considered successful if, during the entire journey, you visit each position xix_i on the XX axis at least once. Note that the initial position pos=spos = s is also considered visited. Your task is to determine the minimum number of steps in any successful sequence of steps."
+  },
+  {
+    "title": "Eulerian Line Graph",
+    "url": "https://codeforces.com/problemset/problem/2120/G",
+    "description": " Aryan loves graph theory more than anything. Well, no, he likes to flex his research paper on line graphs to everyone more. To start a conversation with you, he decides to give you a problem on line graphs. In the mathematical discipline of graph theory, the line graph of a simple undirected graph GG is another simple undirected graph L(G)L(G) that represents the adjacency between every two edges in GG.Precisely speaking, for an undirected graph GG without self-loops or multiple edges, its line graph L(G)L(G) is a graph such that  Each vertex of L(G)L(G) represents an edge of GG.  Two vertices of L(G)L(G) are adjacent if and only if their corresponding edges share a common endpoint in GG.   Also, L0(G)=GL^0(G)=G and Lk(G)=L(Lk−1(G))L^k(G)=L(L^{k-1}(G)) for k≥1k\\geq 1. An Euler trail is a sequence of edges that visits every edge of the graph exactly once. This trail can be either a path (starting and ending at different vertices) or a cycle (starting and ending at the same vertex). Vertices may be revisited during the trail, but each edge must be used exactly once.Aryan gives you a simple connected graph GG with nn vertices and mm edges and an integer kk, and it is guaranteed that GG has an Euler trail and it is not a path graph∗^{\\text{∗}}. He asks you to determine if Lk(G)L^k(G) has an Euler trail. ∗^{\\text{∗}}A path graph is a tree where every vertex is connected to atmost two other vertices."
+  },
+  {
+    "title": "Superb Graphs",
+    "url": "https://codeforces.com/problemset/problem/2120/F",
+    "description": " As we all know, Aryan is a funny guy. He decides to create fun graphs. For a graph GG, he defines fun graph G′G' of GG as follows:  Every vertex v′v' of G′G' maps to a non-empty independent set∗^{\\text{∗}} or clique†^{\\text{†}} in GG.  The sets of vertices of GG that the vertices of G′G' map to are pairwise disjoint and combined cover all the vertices of GG, i.e., the sets of vertices of GG mapped by vertices of G′G' form a partition of the vertex set of GG.  If an edge connects two vertices v′1v_1' and v′2v_2' in G′G', then there is an edge between every vertex of GG in the set mapped to v′1v_1' and every vertex of GG in the set mapped to v′2v_2'.  If an edge does not connect two vertices v′1v_1' and v′2v_2' in G′G', then there is not an edge between any vertex of GG in the set mapped to v′1v_1' and any vertex of GG in the set mapped to v′2v_2'. As we all know again, Harshith is a superb guy. He decides to use fun graphs to create his own superb graphs. For a graph GG, a fun graph G″G' ' is called a superb graph of GG if G' 'G' ' has the minimum number of vertices among all possible fun graphs of GG.Aryan gives Harshith kk simple undirected graphs^{\\text{‡}}^{\\text{‡}} G_1, G_2,\\ldots,G_kG_1, G_2,\\ldots,G_k, all on the same vertex set VV. Harshith then wonders if there exist kk other graphs H_1, H_2,\\ldots,H_kH_1, H_2,\\ldots,H_k, all on some other vertex set V'V' such that:  G_iG_i is a superb graph of H_iH_i for all i\\in \\{1,2,\\ldots,k\\}i\\in \\{1,2,\\ldots,k\\}.  If a vertex v\\in Vv\\in V maps to an independent set of size greater than 11 in one G_i, H_iG_i, H_i (1\\leq i\\leq k1\\leq i\\leq k) pair, then there exists no pair G_j, H_jG_j, H_j (1\\leq j\\leq k, j\\neq i1\\leq j\\leq k, j\\neq i) where vv maps to a clique of size greater than 11. Help Harshith solve his wonder.^{\\text{∗}}^{\\text{∗}}For a graph GG, a subset SS of vertices is called an independent set if no two vertices of SS are connected with an edge.^{\\text{†}}^{\\text{†}}For a graph GG, a subset SS of vertices is called a clique if every vertex of SS is connected to every other vertex of SS with an edge.^{\\text{‡}}^{\\text{‡}}A graph is a simple undirected graph if its edges are undirected and there are no self-loops or multiple edges between the same pair of vertices."
+  },
+  {
+    "title": "Lanes of Cars",
+    "url": "https://codeforces.com/problemset/problem/2120/E",
+    "description": "Harshith is the president of TollClub. He tasks his subordinate Aryan to oversee a toll plaza with nn lanes. Initially, the ii-th lane has aia_i cars waiting in a queue. Exactly one car from the front of each lane passes through the toll every second.The angriness of a car is defined as the number of seconds it had to wait before passing through the toll. Consider it takes 1 sec for each car to pass the toll, i.e., the first car in a lane has angriness 11, the second car has angriness 22, and so on.To reduce congestion and frustration, cars are allowed to switch lanes. A car can instantly move to the back of any other lane at any time. However, changing lanes increases its angriness by an additional kk units due to the confusion caused by the lane change.Harshith, being the awesome person he is, wants to help the drivers by minimising the total angriness of all cars. He asks Aryan to do so or get fired. Aryan is allowed to change lanes of any car anytime (possibly zero), but his goal is to find the minimum possible total angriness if the lane changes are done optimally. Help Aryan retain his job by determining the minimum angriness he can achieve."
+  },
+  {
+    "title": "Matrix game",
+    "url": "https://codeforces.com/problemset/problem/2120/D",
+    "description": "Aryan and Harshith play a game. They both start with three integers aa, bb, and kk. Aryan then gives Harshith two integers nn and mm. Harshith then gives Aryan a matrix XX with nn rows and mm columns, such that each of the elements of XX is between 11 and kk(inclusive). After that, Aryan wins if he can find a submatrix∗^{\\text{∗}} YY of XX with aa rows and bb columns such that all elements of YY are equal.For example, when a=2,b=2,k=6,n=3a=2, b=2, k=6, n=3 and m=3m=3, if Harshith gives Aryan the matrix below, it is a win for Aryan as it has a submatrix of size 2×22\\times 2 with all elements equal to 11 as shown below.  Example of a matrix where Aryan wins Aryan gives you the values of aa, bb, and kk. He asks you to find the lexicographically minimum tuple (n,m)(n,m) that he should give to Harshith such that Aryan always wins. Help Aryan win the game. Assume that Harshith plays optimally. The values of nn and mm can be large, so output them modulo 109+710^9+7. A tuple (n1,m1)(n_1, m_1) is said to be lexicographically smaller than (n2,m2)(n_2, m_2) if either n1<n2n_1<n_2 or n1=n2n_1=n_2 and m1<m2m_1<m_2.∗^{\\text{∗}}A submatrix of a matrix is obtained by removing some rows and/or columns from the original matrix."
+  },
+  {
+    "title": "Divine Tree",
+    "url": "https://codeforces.com/problemset/problem/2120/C",
+    "description": "  Harshith attained enlightenment in Competitive Programming by training under a Divine Tree. A divine tree is a rooted tree∗^{\\text{∗}} with nn nodes, labelled from 11 to nn. The divineness of a node vv, denoted d(v)d(v), is defined as the smallest node label on the unique simple path from the root to node vv.Aryan, being a hungry Competitive Programmer, asked Harshith to pass on the knowledge. Harshith agreed on the condition that Aryan would be given two positive integers nn and mm, and he had to construct a divine tree with nn nodes such that the total divineness of the tree is mm, i.e., n∑i=1d(i)=m\\displaystyle\\sum\\limits_{i=1}^n d(i)=m. If no such tree exists, Aryan must report that it is impossible.Desperate for knowledge, Aryan turned to you for help in completing this task. As a good friend of his, help him solve the task.∗^{\\text{∗}}A tree is a connected graph without cycles.  A rooted tree is a tree where one vertex is special and called the root. "
+  },
+  {
+    "title": "Square Pool",
+    "url": "https://codeforces.com/problemset/problem/2120/B",
+    "description": "Aryan and Harshith are playing pool in universe AX120 on a fixed square pool table of side ss with pockets at its 44 corners. The corners are situated at (0,0)(0,0), (0,s)(0,s), (s,0)(s,0), and (s,s)(s,s). In this game variation, nn identical balls are placed on the table with integral coordinates such that no ball lies on the edge or corner of the table. Then, they are all simultaneously shot at 1010010^{100} units/sec speed (only at 4545 degrees with the axes).In universe AX120, balls and pockets are almost point-sized, and the collisions are elastic, i.e., the ball, on hitting any surface, bounces off at the same angle and with the same speed.  Harshith shot the balls, and he provided Aryan with the balls' positions and the angles at which he shot them. Help Aryan determine the number of balls potted into the pockets by Harshith.It is guaranteed that multiple collisions do not occur at the same moment and position."
+  },
+  {
+    "title": "Square of Rectangles",
+    "url": "https://codeforces.com/problemset/problem/2120/A",
+    "description": "Aryan is an ardent lover of squares but a hater of rectangles (Yes, he knows all squares are rectangles). But Harshith likes to mess with Aryan. Harshith gives Aryan three rectangles of sizes l1×b1l_1\\times b_1, l2×b2l_2\\times b_2, and l3×b3l_3\\times b_3 such that l3≤l2≤l1l_3\\leq l_2\\leq l_1 and b3≤b2≤b1b_3\\leq b_2\\leq b_1. Aryan, in order to defeat Harshith, decides to arrange these three rectangles to form a square such that no two rectangles overlap and the rectangles are aligned along edges. Rotating rectangles is not allowed. Help Aryan determine if he can defeat Harshith."
+  },
+  {
+    "title": "Volcanic Eruptions",
+    "url": "https://codeforces.com/problemset/problem/2119/F",
+    "description": "There is an undirected tree with root 11 where each vertex has a weight wi∈{1,−1}w_i\\in\\{1,-1\\}.A volcano at the root erupts at time 00. At time tt, lava floods all vertices whose distance from the root is at most tt, where the distance is the number of edges in the shortest path between the two vertices.At time 00, you are at vertex stst with life value SS, initially S=1S=1. Starting at time 00 (including time 00), the following events happen in order at each time stamp:   Let uu be the vertex you are currently at. Your life value increases by wuw_u, i.e., S←S+wuS\\gets S+w_u.  If S=0S=0 or if vertex uu is flooded with lava at this time, you die immediately.  You must move to an adjacent vertex (includes father and sons; staying in place is not allowed). You arrive at the chosen vertex at the next time stamp. Find the maximum number of moves you can make before you die."
+  },
+  {
+    "title": "And Constraint",
+    "url": "https://codeforces.com/problemset/problem/2119/E",
+    "description": "wowaka & Hatsune Miku - Tosenbo You are given a sequence aa of length n−1n-1 and a sequence bb of length nn. You can perform the following operation any number of times (possibly zero):  choose an index 1≤i≤n1 \\le i \\le n and increment bib_i by 11 (i.e., set bi←bi+1b_i \\leftarrow b_i + 1). Your goal is to perform the minimum number of operations such that for every 1≤i≤n−11 \\le i \\le n-1, the condition bi&bi+1=aib_i \\, \\& \\, b_{i+1} = a_i holds, where &\\& denotes the bitwise AND operation. If it is impossible to satisfy the condition, report it as well."
+  },
+  {
+    "title": "Token Removing",
+    "url": "https://codeforces.com/problemset/problem/2119/D",
+    "description": "r-906 & Hatsune Miku - All I Can See Is You Define a sequence of integers aa valid if and only if ∀1≤i≤n,0≤ai≤i\\forall 1 \\le i \\le n, 0 \\le a_i \\le i.Define the weight f(a)f(a) of a valid sequence aa of length nn:  Initially, a token is placed at each integer point in the closed segment [1,n][1, n] on the number axis.  Perform nn operations in sequence. During the ii-th operation, if ai≠0a_i \\ne 0, remove a token in the closed segment [ai,i][a_i, i] that has not been removed; otherwise, do nothing.  f(a)f(a) is the number of ways to remove tokens. Two ways are considered different if there exists a tt such that the positions of the tokens removed by the two ways are different at the tt-th operation. For example, f([0,2,1])=2f([0, 2, 1]) = 2, because we can remove tokens on 2,12, 1 or 2,32, 3 in sequence.JT gives you two integers n,mn, m and asks you to find the sum of the weights over all (n+1)!(n + 1)! valid sequences of length nn. Since the answer may be too large, print it modulo mm."
+  },
+  {
+    "title": "A Good Problem",
+    "url": "https://codeforces.com/problemset/problem/2119/C",
+    "description": " Juggernaut. - Lost Dream feat.星名はる You are given four positive integers n,l,r,kn, l, r, k. You need to find the lexicographically smallest∗^{\\text{∗}} array aa of length nn, consisting of integers, such that:  For every 1≤i≤n1 \\leq i \\leq n, l≤ai≤rl \\leq a_i \\leq r.  a1&a2&…&an=a1⊕a2⊕…⊕ana_1 \\, \\& \\, a_2 \\, \\& \\, \\ldots \\, \\& \\, a_n = a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n, where &\\& denotes the bitwise AND operation and ⊕\\oplus denotes the bitwise XOR operation. If no such array exists, output −1-1. Otherwise, since the entire array might be too large to output, output aka_k only.∗^{\\text{∗}}An array aa is lexicographically smaller than an array bb if and only if one of the following holds:   aa is a prefix of bb, but a≠ba \\ne b; or  in the first position where aa and bb differ, the array aa has a smaller element than the corresponding element in bb.  "
+  },
+  {
+    "title": "Line Segments",
+    "url": "https://codeforces.com/problemset/problem/2119/B",
+    "description": "PIKASONIC - Lost My Mind (feat.nakotanmaru) You are given two points (px,py)(p_x,p_y) and (qx,qy)(q_x,q_y) on a Euclidean plane.You start at the starting point (px,py)(p_x,p_y) and will perform nn operations. In the ii-th operation, you must choose any point such that the Euclidean distance∗^{\\text{∗}} between your current position and the point is exactly aia_i, and then move to that point.Determine whether it is possible to reach the terminal point (qx,qy)(q_x,q_y) after performing all operations.∗^{\\text{∗}}The Euclidean distance between (x1,y1)(x_1, y_1) and (x2,y2)(x_2, y_2) is √(x1−x2)2+(y1−y2)2\\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}"
+  },
+  {
+    "title": "Add or XOR",
+    "url": "https://codeforces.com/problemset/problem/2119/A",
+    "description": "r-906 & IA AI - Psychologic Disco You are given two non-negative integers a,ba, b. You can apply two types of operations on aa any number of times and in any order:  a←a+1a \\gets a + 1. The cost of this operation is xx;  a←a⊕1a \\gets a \\oplus 1, where ⊕\\oplus denotes the bitwise XOR operation. The cost of this operation is yy. Now you are asked to make a=ba = b. If it's possible, output the minimum cost; otherwise, report it."
+  },
+  {
+    "title": "Shifts and Swaps",
+    "url": "https://codeforces.com/problemset/problem/2118/F",
+    "description": "You are given arrays aa and bb of length nn and an integer mm. The arrays only contain integers from 11 to mm, and both arrays contain all integers from 11 to mm.You may repeatedly perform either of the following operations on aa:   cyclic shift∗^{\\text{∗}} the array to the left  swap two neighboring elements if their difference is at least 22. Is it possible to transform the first array into the second?∗^{\\text{∗}}A left cyclic shift of a zero-indexed array pp of length nn is an array qq such that qi=p(i+1)modnq_i = p_{(i + 1) \\bmod n} for all 0≤i<n0 \\le i < n."
+  },
+  {
+    "title": "Grid Coloring",
+    "url": "https://codeforces.com/problemset/problem/2118/E",
+    "description": "There is a n×mn\\times m grid with each cell initially white. You have to color all the cells one-by-one. After you color a cell, all the colored cells furthest from it receive a penalty. Find a coloring order, where no cell has more than 33 penalties.Note that nn and mm are both odd.The distance metric used is the chessboard distance while we decide ties between cells with Manhattan distance. Formally, a cell (x2,y2)(x_2, y_2) is further away than (x3,y3)(x_3, y_3) from a cell (x1,y1)(x_1, y_1) if one of the following holds:   max(|x1−x2|,|y1−y2|)>max(|x1−x3|,|y1−y3|)\\max\\big(\\lvert x_1 - x_2 \\rvert, \\lvert y_1 - y_2 \\rvert\\big)>\\max\\big(\\lvert x_1 - x_3 \\rvert, \\lvert y_1 - y_3 \\rvert\\big)  max(|x1−x2|,|y1−y2|)=max(|x1−x3|,|y1−y3|)\\max\\big(\\lvert x_1 - x_2 \\rvert, \\lvert y_1 - y_2 \\rvert\\big)=\\max\\big(\\lvert x_1 - x_3 \\rvert, \\lvert y_1 - y_3 \\rvert\\big) and |x1−x2|+|y1−y2|>|x1−x3|+|y1−y3|\\lvert x_1 - x_2 \\rvert + \\lvert y_1 - y_2 \\rvert>\\lvert x_1 - x_3 \\rvert + \\lvert y_1 - y_3 \\rvert It can be proven that at least one solution always exists.    Example showing penalty changes after coloring the center of a 5×55 \\times 5 grid. The numbers indicate the penalty of the cells.  "
+  },
+  {
+    "title": "Red Light, Green Light (Hard version)",
+    "url": "https://codeforces.com/problemset/problem/2118/D2",
+    "description": "This is the hard version of the problem. The only difference is the constraint on kk and the total sum of nn and qq across all test cases. You can make hacks only if both versions of the problem are solved.You are given a strip of length 101510^{15} and a constant kk. There are exactly nn cells that contain a traffic light; each has a position pip_i and an initial delay did_i for which di<kd_i < k. The ii-th traffic light works the following way:   it shows red at the l⋅k+dil \\cdot k + d_i-th second, where ll is an integer,  it shows green otherwise. At second 00, you are initially positioned at some cell on the strip, facing the positive direction. At each second, you perform the following actions in order:   If the current cell contains a red traffic light, you turn around.  Move one cell in the direction you are currently facing. You are given qq different starting positions. For each one, determine whether you will eventually leave the strip within 1010010^{100} seconds."
+  },
+  {
+    "title": "Red Light, Green Light (Easy version)",
+    "url": "https://codeforces.com/problemset/problem/2118/D1",
+    "description": "This is the easy version of the problem. The only difference is the constraint on kk and the total sum of nn and qq across all test cases. You can make hacks only if both versions of the problem are solved.You are given a strip of length 101510^{15} and a constant kk. There are exactly nn cells that contain a traffic light; each has a position pip_i and an initial delay did_i for which di<kd_i < k. The ii-th traffic light works the following way:   it shows red at the l⋅k+dil \\cdot k + d_i-th second, where ll is an integer,  it shows green otherwise. At second 00, you are initially positioned at some cell on the strip, facing the positive direction. At each second, you perform the following actions in order:   If the current cell contains a red traffic light, you turn around.  Move one cell in the direction you are currently facing. You are given qq different starting positions. For each one, determine whether you will eventually leave the strip within 1010010^{100} seconds."
+  },
+  {
+    "title": "Make It Beautiful",
+    "url": "https://codeforces.com/problemset/problem/2118/C",
+    "description": "You are given an array aa of nn integers. We define the beauty\\text{beauty} of a number xx to be the number of 11 bits in its binary representation. We define the beauty of an array to be the sum of beauties of the numbers it contains. In one operation, you can select an index ii (1≤i≤n)(1 \\le i \\le n) and increase aia_i by 11. Find the maximum beauty of the array after doing at most kk operations."
+  },
+  {
+    "title": "Make It Permutation",
+    "url": "https://codeforces.com/problemset/problem/2118/B",
+    "description": "There is a matrix AA of size n×nn\\times n where Ai,j=jA_{i,j}=j for all 1≤i,j≤n1 \\le i,j \\le n. In one operation, you can select a row and reverse any subarray∗^{\\text{∗}} in it. Find a sequence of at most 2n2n operations such that every column will contain a permutation†^{\\text{†}} of length nn.It can be proven that the construction is always possible. If there are multiple solutions, output any of them.∗^{\\text{∗}}An array aa is a subarray of an array bb if aa can be obtained from bb by deleting zero or more elements from the beginning and zero or more elements from the end.†^{\\text{†}}A permutation of length nn is an array consisting of nn distinct integers from 11 to nn in arbitrary order. For example, [2,3,1,5,4][2,3,1,5,4] is a permutation, but [1,2,2][1,2,2] is not a permutation (22 appears twice in the array), and [1,3,4][1,3,4] is also not a permutation (n=3n=3 but there is 44 in the array)."
+  },
+  {
+    "title": "Equal Subsequences",
+    "url": "https://codeforces.com/problemset/problem/2118/A",
+    "description": "We call a bitstring∗^{\\text{∗}} perfect if it has the same number of 101\\mathtt{101} and 010\\mathtt{010} subsequences†^{\\text{†}}. Construct a perfect bitstring of length nn where the number of 1\\mathtt{1} characters it contains is exactly kk.It can be proven that the construction is always possible. If there are multiple solutions, output any of them.∗^{\\text{∗}}A bitstring is a string consisting only of the characters 0\\mathtt{0} and 1\\mathtt{1}.†^{\\text{†}}A sequence aa is a subsequence of a string bb if aa can be obtained from bb by the deletion of several (possibly zero or all) characters."
+  },
+  {
+    "title": "Incessant Rain",
+    "url": "https://codeforces.com/problemset/problem/2117/H",
+    "description": "Note the unusual memory limit.Silver Wolf gives you an array aa of length nn and qq queries. In each query, she replaces an element in aa. After each query, she asks you to output the maximum integer kk such that there exists an integer xx such that it is the kk-majority of a subarray∗^{\\text{∗}} of aa.An integer yy is the kk-majority of array bb if yy appears at least ⌊|b|+12⌋+k\\lfloor \\frac{|b|+1}{2} \\rfloor +k times in bb, where |b||b| represents the length of bb. Note that bb may not necessarily have a kk-majority.∗^{\\text{∗}}An array bb is a subarray of an array aa if bb can be obtained from aa by the deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end."
+  },
+  {
+    "title": "Omg Graph",
+    "url": "https://codeforces.com/problemset/problem/2117/G",
+    "description": "You are given an undirected connected weighted graph. Define the cost of a path of length kk to be as follows:  Let the weights of all the edges on the path be w1,...,wkw_1,...,w_k.  The cost of the path is (minki=1wi)+(maxki=1wi)(\\min_{i = 1}^{k}{w_i}) + (\\max_{i=1}^{k}{w_i}), or in other words, the maximum edge weight + the minimum edge weight. Across all paths from vertex 11 to nn, report the cost of the path with minimum cost. Note that the path is not necessarily simple."
+  },
+  {
+    "title": "Wildflower",
+    "url": "https://codeforces.com/problemset/problem/2117/F",
+    "description": "Yousef has a rooted tree∗^{\\text{∗}} consisting of exactly nn vertices, which is rooted at vertex 11. You would like to give Yousef an array aa of length nn, where each aia_i (1≤i≤n)(1 \\le i \\le n) can either be 11 or 22.Let sus_u denote the sum of ava_v where vertex vv is in the subtree†^{\\text{†}} of vertex uu. Yousef considers the tree special if all the values in ss are pairwise distinct (i.e., all subtree sums are unique).Your task is to help Yousef count the number of different arrays aa that result in the tree being special. Two arrays bb and cc are different if there exists an index ii such that bi≠cib_i \\neq c_i.As the result can be very large, you should print it modulo 109+710^9 + 7.∗^{\\text{∗}}A tree is a connected undirected graph with n−1n - 1 edges.†^{\\text{†}}The subtree of a vertex vv is the set of all vertices that pass through vv on a simple path to the root. Note that vertex vv is also included in the set."
+  },
+  {
+    "title": "Lost Soul",
+    "url": "https://codeforces.com/problemset/problem/2117/E",
+    "description": "You are given two integer arrays aa and bb, each of length nn.You may perform the following operation any number of times:   Choose an index ii (1≤i≤n−1)(1 \\le i \\le n - 1), and set ai:=bi+1a_i := b_{i + 1}, or set bi:=ai+1b_i := a_{i + 1}. Before performing any operations, you are allowed to choose an index ii (1≤i≤n)(1 \\le i \\le n) and remove both aia_i and bib_i from the arrays. This removal can be done at most once.Let the number of matches between two arrays cc and dd of length mm be the number of positions jj (1≤j≤m)(1 \\le j \\le m) such that cj=djc_j = d_j.Your task is to compute the maximum number of matches you can achieve."
+  },
+  {
+    "title": "Retaliation",
+    "url": "https://codeforces.com/problemset/problem/2117/D",
+    "description": "Yousef wants to explode an array a1,a2,…,ana_1, a_2, \\dots, a_n. An array gets exploded when all of its elements become equal to zero.In one operation, Yousef can do exactly one of the following:   For every index ii in aa, decrease aia_i by ii.  For every index ii in aa, decrease aia_i by n−i+1n - i + 1. Your task is to help Yousef determine if it is possible to explode the array using any number of operations."
+  },
+  {
+    "title": "Cool Partition",
+    "url": "https://codeforces.com/problemset/problem/2117/C",
+    "description": "Yousef has an array aa of size nn. He wants to partition the array into one or more contiguous segments such that each element aia_i belongs to exactly one segment.A partition is called cool if, for every segment bjb_j, all elements in bjb_j also appear in bj+1b_{j + 1} (if it exists). That is, every element in a segment must also be present in the segment following it.For example, if a=[1,2,2,3,1,5]a = [1, 2, 2, 3, 1, 5], a cool partition Yousef can make is b1=[1,2]b_1 = [1, 2], b2=[2,3,1,5]b_2 = [2, 3, 1, 5]. This is a cool partition because every element in b1b_1 (which are 11 and 22) also appears in b2b_2. In contrast, b1=[1,2,2]b_1 = [1, 2, 2], b2=[3,1,5]b_2 = [3, 1, 5] is not a cool partition, since 22 appears in b1b_1 but not in b2b_2.Note that after partitioning the array, you do not change the order of the segments. Also, note that if an element appears several times in some segment bjb_j, it only needs to appear at least once in bj+1b_{j + 1}.Your task is to help Yousef by finding the maximum number of segments that make a cool partition."
+  },
+  {
+    "title": "Shrink",
+    "url": "https://codeforces.com/problemset/problem/2117/B",
+    "description": "A shrink operation on an array aa of size mm is defined as follows:  Choose an index ii (2≤i≤m−12 \\le i \\le m - 1) such that ai>ai−1a_i \\gt a_{i - 1} and ai>ai+1a_i \\gt a_{i + 1}.  Remove aia_i from the array. Define the score of a permutation∗^{\\text{∗}} pp as the maximum number of times that you can perform the shrink operation on pp.Yousef has given you a single integer nn. Construct a permutation pp of length nn with the maximum possible score. If there are multiple answers, you can output any of them.∗^{\\text{∗}}A permutation of length nn is an array consisting of nn distinct integers from 11 to nn in arbitrary order. For example, [2,3,1,5,4][2,3,1,5,4] is a permutation, but [1,2,2][1,2,2] is not a permutation (22 appears twice in the array), and [1,3,4][1,3,4] is also not a permutation (n=3n=3 but there is 44 in the array)."
+  },
+  {
+    "title": "False Alarm",
+    "url": "https://codeforces.com/problemset/problem/2117/A",
+    "description": "Yousef is at the entrance of a long hallway with nn doors in a row, numbered from 11 to nn. He needs to pass through all the doors from 11 to nn in order of numbering and reach the exit (past door nn). Each door can be open or closed. If a door is open, Yousef passes through it in 11 second. If the door is closed, Yousef can't pass through it.However, Yousef has a special button which he can use at most once at any moment. This button makes all closed doors become open for xx seconds.Your task is to determine if Yousef can pass through all the doors if he can use the button at most once."
+  },
+  {
+    "title": "Gellyfish and Baby's Breath",
+    "url": "https://codeforces.com/problemset/problem/2116/B",
+    "description": "Flower gives Gellyfish two permutations∗^{\\text{∗}} of [0,1,…,n−1][0, 1, \\ldots, n-1]: p0,p1,…,pn−1p_0, p_1, \\ldots, p_{n-1} and q0,q1,…,qn−1q_0, q_1, \\ldots, q_{n-1}.Now Gellyfish wants to calculate an array r0,r1,…,rn−1r_0,r_1,\\ldots,r_{n-1} through the following method:  For all ii (0≤i≤n−10 \\leq i \\leq n-1), ri=imaxj=0(2pj+2qi−j)r_i = \\max\\limits_{j=0}^{i} \\left(2^{p_j} + 2^{q_{i-j}} \\right) But since Gellyfish is very lazy, you have to help her figure out the elements of rr.Since the elements of rr are very large, you are only required to output the elements of rr modulo 998244353998\\,244\\,353.∗^{\\text{∗}}An array bb is a permutation of an array aa if bb consists of the elements of aa in arbitrary order. For example, [4,2,3,4][4,2,3,4] is a permutation of [3,2,4,4][3,2,4,4] while [1,2,2][1,2,2] is not a permutation of [1,2,3][1,2,3]."
+  },
+  {
+    "title": "Gellyfish and Tricolor Pansy",
+    "url": "https://codeforces.com/problemset/problem/2116/A",
+    "description": "Gellyfish and Flower are playing a game called \"Duel\".Gellyfish has aa HP, while Flower has bb HP.Each of them has a knight. Gellyfish's knight has cc HP, while Flower's knight has dd HP.They will play a game in rounds until one of the players wins. For k=1,2,…k = 1, 2, \\ldots in this order, they will perform the following actions: If kk is odd and Gellyfish's knight is alive:  Gellyfish's knight can attack Flower and reduce bb by 11. If b≤0b \\leq 0, Gellyfish wins. Or,  Gellyfish's knight can attack Flower's knight and reduce dd by 11. If d≤0d \\leq 0, Flower's knight dies.  If kk is even and Flower's knight is alive:  Flower's knight can attack Gellyfish and reduce aa by 11. If a≤0a \\leq 0, Flower wins. Or,  Flower's knight can attack Gellyfish's knight and reduce cc by 11. If c≤0c \\leq 0, Gellyfish's knight dies. As one of the smartest people in the world, you want to tell them who will win before the game. Assume both players play optimally.It can be proven that the game will never end in a draw. That is, one player has a strategy to end the game in a finite number of moves."
+  },
+  {
+    "title": "Gellyfish and Lycoris Radiata (Hard Version)",
+    "url": "https://codeforces.com/problemset/problem/2115/F2",
+    "description": "This is the hard version of the problem. The difference between the versions is that in this version, the time limit and the constraints on nn and qq are higher. You can hack only if you solved all versions of this problem. Gellyfish has an array consisting of nn sets. Initially, all the sets are empty.Now Gellyfish will do qq operations. Each operation contains one modification operation and one query operation, for the ii-th (1≤i≤q1 \\leq i \\leq q) operation:First, there will be a modification operation, which is one of the following:  Insert operation: You are given an integer rr. For the 11-th to rr-th sets, insert element ii. Note that the element inserted here is ii, the index of the operation, not the index of the set.  Reverse operation: You are given an integer rr. Reverse the 11-th to rr-th sets.  Delete operation: You are given an integer xx. Delete element xx from all sets that contain xx. Followed by a query operation:  Query operation: You are given an integer pp. Output the smallest element in the pp-th set (If the pp-th set is empty, the answer is considered to be 00). Now, Flower needs to provide the answer for each query operation. Please help her!Additional constraint on the problem: Gellyfish will only give the next operation after Flower has answered the previous query operation. That is, you need to solve this problem online. Please refer to the input format for more details."
+  },
+  {
+    "title": "Gellyfish and Lycoris Radiata (Easy Version)",
+    "url": "https://codeforces.com/problemset/problem/2115/F1",
+    "description": "This is the easy version of the problem. The difference between the versions is that in this version, the time limit and the constraints on nn and qq are lower. You can hack only if you solved all versions of this problem. Gellyfish has an array consisting of nn sets. Initially, all the sets are empty.Now Gellyfish will do qq operations. Each operation contains one modification operation and one query operation, for the ii-th (1≤i≤q1 \\leq i \\leq q) operation:First, there will be a modification operation, which is one of the following:  Insert operation: You are given an integer rr. For the 11-th to rr-th sets, insert element ii. Note that the element inserted here is ii, the index of the operation, not the index of the set.  Reverse operation: You are given an integer rr. Reverse the 11-th to rr-th sets.  Delete operation: You are given an integer xx. Delete element xx from all sets that contain xx. Followed by a query operation:  Query operation: You are given an integer pp. Output the smallest element in the pp-th set (If the pp-th set is empty, the answer is considered to be 00). Now, Flower needs to provide the answer for each query operation. Please help her!Additional constraint on the problem: Gellyfish will only give the next operation after Flower has answered the previous query operation. That is, you need to solve this problem online. Please refer to the input format for more details."
+  },
+  {
+    "title": "Gellyfish and Mayflower",
+    "url": "https://codeforces.com/problemset/problem/2115/E",
+    "description": "Mayflower by PlumMay, Gellyfish's friend, loves playing a game called \"Inscryption\" which is played on a directed acyclic graph with nn vertices and mm edges. All edges a→b a \\rightarrow b satisfy a<ba<b.You start in vertex 11 with some coins. You need to move from vertex 11 to the vertex where the boss is located along the directed edges, and then fight with the final boss.Each of the nn vertices of the graph contains a Trader who will sell you a card with power wiw_i for cic_i coins. You can buy as many cards as you want from each Trader. However, you can only trade with the trader on the ii-th vertex if you are currently on the ii-th vertex.In order to defeat the boss, you want the sum of the power of your cards to be as large as possible.You will have to answer the following qq queries:  Given integers pp and rr. If the final boss is located at vertex pp, and you have rr coins in the beginning, what is the maximum sum of the power of your cards when you fight the final boss? Note that you are allowed to trade cards on vertex pp. "
+  },
+  {
+    "title": "Gellyfish and Forget-Me-Not",
+    "url": "https://codeforces.com/problemset/problem/2115/D",
+    "description": " Gellyfish and Flower are playing a game.The game consists of two arrays of nn integers a1,a2,…,ana_1,a_2,\\ldots,a_n and b1,b2,…,bnb_1,b_2,\\ldots,b_n, along with a binary string c1c2…cnc_1c_2\\ldots c_n of length nn.There is also an integer xx which is initialized to 00.The game consists of nn rounds. For i=1,2,…,ni = 1,2,\\ldots,n, the round proceeds as follows:  If ci=0c_i = \\mathtt{0}, Gellyfish will be the active player. Otherwise, if ci=1c_i = \\mathtt{1}, Flower will be the active player.  The active player will perform exactly one of the following operations:   Set x:=x⊕aix:=x \\oplus a_i.  Set x:=x⊕bix:=x \\oplus b_i.  Here, ⊕\\oplus denotes the bitwise XOR operation. Gellyfish wants to minimize the final value of x x  after n n  rounds, while Flower wants to maximize it. Find the final value of x x  after all n n  rounds if both players play optimally."
+  },
+  {
+    "title": "Gellyfish and Eternal Violet",
+    "url": "https://codeforces.com/problemset/problem/2115/C",
+    "description": " There are nn monsters, numbered from 11 to nn, in front of Gellyfish. The HP of the ii-th monster is hih_i.Gellyfish doesn't want to kill them, but she wants to keep these monsters from being a threat to her. So she wants to reduce the HP of all the monsters to exactly 11.Now, Gellyfish, with The Sword Sharpened with Tears, is going to attack the monsters for mm rounds. For each round:  The Sword Sharpened with Tears shines with a probability of pp.  Gellyfish can choose whether to attack:   If Gellyfish doesn't attack, nothing happens.  If Gellyfish chooses to attack and The Sword Sharpened with Tears shines, the HP of all the monsters will be reduced by 11.  If Gellyfish chooses to attack and The Sword Sharpened with Tears does not shine, Gellyfish can choose one of the monsters and reduce its HP by 11.  Please note that before Gellyfish decides whether or not to attack, she will know whether the sword shines or not. Also, when the sword shines, Gellyfish can only make attacks on all the monsters and cannot make an attack on only one monster.Now, Gellyfish wants to know what the probability is that she will reach her goal if she makes choices optimally during the battle."
+  },
+  {
+    "title": "Gellyfish and Camellia Japonica",
+    "url": "https://codeforces.com/problemset/problem/2115/B",
+    "description": "Gellyfish has an array of nn integers c1,c2,…,cnc_1, c_2, \\ldots, c_n. In the beginning, c=[a1,a2,…,an]c = [a_1, a_2, \\ldots, a_n].Gellyfish will make qq modifications to cc.For i=1,2,…,qi = 1,2,\\ldots,q, Gellyfish is given three integers xix_i, yiy_i, and ziz_i between 11 and nn. Then Gellyfish will set czi:=min(cxi,cyi)c_{z_i} := \\min(c_{x_i}, c_{y_i}).After the qq modifications, c=[b1,b2,…,bn]c = [b_1, b_2, \\ldots, b_n].Now Flower knows the value of bb and the value of the integers xix_i, yiy_i, and ziz_i for all 1≤i≤q1 \\leq i \\leq q, but she doesn't know the value of aa.Flower wants to find any possible value of the array aa or report that no such aa exists.If there are multiple possible values of the array aa, you may output any of them."
+  },
+  {
+    "title": "Gellyfish and Flaming Peony",
+    "url": "https://codeforces.com/problemset/problem/2115/A",
+    "description": "Gellyfish hates math problems, but she has to finish her math homework:Gellyfish is given an array of nn positive integers a1,a2,…,ana_1, a_2, \\ldots, a_n.She needs to do the following two-step operation until all elements of aa are equal:  Select two indexes ii, jj satisfying 1≤i,j≤n1 \\leq i, j \\leq n and i≠ji \\neq j.  Replace aia_i with gcd(ai,aj)\\gcd(a_i, a_j). Now, Gellyfish asks you for the minimum number of operations to achieve her goal.It can be proven that Gellyfish can always achieve her goal."
+  },
+  {
+    "title": "Build an Array",
+    "url": "https://codeforces.com/problemset/problem/2114/G",
+    "description": "Yesterday, Dima found an empty array and decided to add some integers to it. He can perform the following operation an unlimited number of times:  add any integer to the left or right end of the array.  then, as long as there is a pair of identical adjacent elements in the array, they will be replaced by their sum. It can be shown that there can be at most one such pair in the array at the same time.For example, if the array is [3,6,4][3, 6, 4] and we add the number 33 to the left, the array will first become [3,3,6,4][3, 3, 6, 4], then the first two elements will be replaced by 66, and the array will become [6,6,4][6, 6, 4], and then — [12,4][12, 4].After performing the operation exactly kk times, he thinks he has obtained an array aa of length nn, but he does not remember which operations he applied. Determine if there exists a sequence of kk operations that could result in the given array aa from an empty array, or determine that it is impossible."
+  },
+  {
+    "title": "Small Operations",
+    "url": "https://codeforces.com/problemset/problem/2114/F",
+    "description": "Given an integer xx and an integer kk. In one operation, you can perform one of two actions:  choose an integer 1≤a≤k1 \\le a \\le k and assign x=x⋅ax = x \\cdot a;  choose an integer 1≤a≤k1 \\le a \\le k and assign x=xax = \\frac{x}{a}, where the value of xa\\frac{x}{a} must be an integer. Find the minimum number of operations required to make the number xx equal to yy, or determine that it is impossible."
+  },
+  {
+    "title": "Kirei Attacks the Estate",
+    "url": "https://codeforces.com/problemset/problem/2114/E",
+    "description": "Once, Kirei stealthily infiltrated the trap-filled estate of the Ainzbern family but was discovered by Kiritugu's familiar. Assessing his strength, Kirei decided to retreat. The estate is represented as a tree with nn vertices, with the root at vertex 11. Each vertex of the tree has a number aia_i recorded, which represents the danger of vertex ii. Recall that a tree is a connected undirected graph without cycles.For a successful retreat, Kirei must compute the threat value for each vertex. The threat of a vertex is equal to the maximum alternating sum along the vertical path starting from that vertex. The alternating sum along the vertical path starting from vertex ii is defined as ai−api+appi−…a_i - a_{p_i} + a_{p_{p_i}} - \\ldots, where pip_i is the parent of vertex ii on the path to the root (to vertex 11).For example, in the tree below, vertex 44 has the following vertical paths:   [4][4] with an alternating sum of a4=6a_4 = 6;  [4,3][4, 3] with an alternating sum of a4−a3=6−2=4a_4 - a_3 = 6 - 2 = 4;  [4,3,2][4, 3, 2] with an alternating sum of a4−a3+a2=6−2+5=9a_4 - a_3 + a_2 = 6 - 2 + 5 = 9;  [4,3,2,1][4, 3, 2, 1] with an alternating sum of a4−a3+a2−a1=6−2+5−4=5a_4 - a_3 + a_2 - a_1 = 6 - 2 + 5 - 4 = 5.   The dangers of the vertices are indicated in red. Help Kirei compute the threat values for all vertices and escape the estate."
+  },
+  {
+    "title": "Come a Little Closer",
+    "url": "https://codeforces.com/problemset/problem/2114/D",
+    "description": "The game field is a matrix of size 109×10910^9 \\times 10^9, with a cell at the intersection of the aa-th row and the bb-th column denoted as (a,ba, b).There are nn monsters on the game field, with the ii-th monster located in the cell (xi,yix_i, y_i), while the other cells are empty. No more than one monster can occupy a single cell.You can move one monster to any cell on the field that is not occupied by another monster at most once .After that, you must select one rectangle on the field; all monsters within the selected rectangle will be destroyed. You must pay 11 coin for each cell in the selected rectangle.Your task is to find the minimum number of coins required to destroy all the monsters."
+  },
+  {
+    "title": "Need More Arrays",
+    "url": "https://codeforces.com/problemset/problem/2114/C",
+    "description": "Given an array aa and nn integers. It is sorted in non-decreasing order, that is, ai≤ai+1a_i \\le a_{i + 1} for all 1≤i<n1 \\le i < n.You can remove any number of elements from the array (including the option of not removing any at all) without changing the order of the remaining elements. After the removals, the following will occur:  a1a_1 is written to a new array; if a1+1<a2a_1 + 1 < a_2, then a2a_2 is written to a new array; otherwise, a2a_2 is written to the same array as a1a_1; if a2+1<a3a_2 + 1 < a_3, then a3a_3 is written to a new array; otherwise, a3a_3 is written to the same array as a2a_2; ⋯\\cdots For example, if a=[1,2,4,6]a=[1, 2, 4, 6], then:  a1=1a_1 = 1 is written to the new array, resulting in arrays: [1][1];  a1+1=2a_1 + 1 = 2, so a2=2a_2 = 2 is added to the existing array, resulting in arrays: [1,2][1, 2];  a2+1=3a_2 + 1 = 3, so a3=4a_3 = 4 is written to a new array, resulting in arrays: [1,2][1, 2] and [4][4];  a3+1=5a_3 + 1 = 5, so a4=6a_4 = 6 is written to a new array, resulting in arrays: [1,2][1, 2], [4][4], and [6][6]. Your task is to remove elements in such a way that the described algorithm creates as many arrays as possible. If you remove all elements from the array, no new arrays will be created."
+  },
+  {
+    "title": "Not Quite a Palindromic String",
+    "url": "https://codeforces.com/problemset/problem/2114/B",
+    "description": "Vlad found a binary string∗^{\\text{∗}} ss of even length nn. He considers a pair of indices (i,n−i+1i, n - i + 1), where 1≤i<n−i+11 \\le i < n - i + 1, to be good if si=sn−i+1s_i = s_{n - i + 1} holds true.For example, in the string '010001' there is only 11 good pair, since s1≠s6s_1 \\ne s_6, s2≠s5s_2 \\ne s_5, and s3=s4s_3=s_4. In the string '0101' there are no good pairs.Vlad loves palindromes, but not too much, so he wants to rearrange some characters of the string so that there are exactly kk good pairs of indices.Determine whether it is possible to rearrange the characters in the given string so that there are exactly kk good pairs of indices (i,n−i+1i, n - i + 1).∗^{\\text{∗}}A string ss is called binary if it consists only of the characters '0' and '1' "
+  },
+  {
+    "title": "Square Year",
+    "url": "https://codeforces.com/problemset/problem/2114/A",
+    "description": "One can notice the following remarkable mathematical fact: the number 20252025 can be represented as (20+25)2(20+25)^2.You are given a year represented by a string ss, consisting of exactly 44 characters. Thus, leading zeros are allowed in the year representation. For example, \"0001\", \"0185\", \"1375\" are valid year representations. You need to express it in the form (a+b)2(a + b)^2, where aa and bb are non-negative integers, or determine that it is impossible.For example, if ss = \"0001\", you can choose a=0a = 0, b=1b = 1, and write the year as (0+1)2=1(0 + 1)^2 = 1."
+  },
+  {
+    "title": "Two Arrays",
+    "url": "https://codeforces.com/problemset/problem/2113/F",
+    "description": "You are given two arrays aa and bb of length nn. You can perform the following operation an unlimited number of times:  Choose an integer ii from 11 to nn and swap aia_i and bib_i. Let f(c)f(c) be the number of distinct numbers in array cc. Find the maximum value of f(a)+f(b)f(a) + f(b). Also, output the arrays aa and bb after performing all operations."
+  },
+  {
+    "title": "From Kazan with Love",
+    "url": "https://codeforces.com/problemset/problem/2113/E",
+    "description": "Marat is a native of Kazan. Kazan can be represented as an undirected tree consisting of nn vertices. In his youth, Marat often got into street fights, and now he has mm enemies, numbered from 11 to mm, living in Kazan along with him.Every day, all the people living in the city go to work. Marat knows that the ii-th of his enemies lives at vertex aia_i and works at vertex bib_i. He himself lives at vertex xx and works at vertex yy. It is guaranteed that ai≠xa_i \\ne x.All enemies go to work via the shortest path and leave their homes at time 11. That is, if we represent the shortest path between vertices aia_i and bib_i as c1,c2,c3,…,ckc_1, c_2, c_3, \\ldots, c_k (where c1=aic_1 = a_i and ck=bic_k = b_i), then at the moment pp (1≤p≤k1 \\le p \\le k), the enemy numbered ii will be at vertex cpc_p.Marat really does not want to meet any of his enemies at the same vertex at the same time, as this would create an awkward situation, but they can meet on an edge. Marat also leaves his home at time 11, and at each subsequent moment in time, he can either move to an adjacent vertex or stay at his current one.Note that Marat can only meet the ii-th enemy at the moments 2,3,…,k2, 3, \\ldots, k (where c1,c2,…,ckc_1, c_2, \\ldots, c_k is the shortest path between vertices aia_i and bib_i). In other words, starting from the moment after the enemy reaches work, Marat can no longer meet him.Help Marat find the earliest moment in time when he can reach work without encountering any enemies along the way, or determine that it is impossible."
+  },
+  {
+    "title": "Cheater",
+    "url": "https://codeforces.com/problemset/problem/2113/D",
+    "description": "You are playing a new card game in a casino with the following rules:  The game uses a deck of 2n2n cards with different values.  The deck is evenly split between the player and the dealer: each receives nn cards.  Over nn rounds, the player and the dealer simultaneously play one top card from their hand. The cards are compared, and the point goes to the one whose card has a higher value. The winning card is removed from the game, while the losing card is returned to the hand and placed on top of the other cards in the hand of the player who played it. Note that the game always lasts exactly nn rounds.You have tracked the shuffling of the cards and know the order of the cards in the dealer's hand (from top to bottom). You want to maximize your score, so you can swap any two cards in your hand no more than once (to avoid raising suspicion).Determine the maximum number of points you can achieve."
+  },
+  {
+    "title": "Smilo and Minecraft",
+    "url": "https://codeforces.com/problemset/problem/2113/C",
+    "description": "The boy Smilo is playing Minecraft! To prepare for the battle with the dragon, he needs a lot of golden apples, and for that, he requires a lot of gold. Therefore, Smilo goes to the mine.The mine is a rectangular grid of size n×mn \\times m, where each cell can be either gold ore, stone, or an empty cell. Smilo can blow up dynamite in any empty cell. When dynamite explodes in an empty cell with coordinates (x,y)(x, y), all cells within a square of side 2k+12k + 1 centered at cell (x,y)(x, y) become empty. If gold ore was located strictly inside this square (not on the boundary), it disappears. However, if the gold ore was on the boundary of this square, Smilo collects that gold.Dynamite can only be detonated inside the mine, but the explosion square can extend beyond the mine's boundaries.Determine the maximum amount of gold that Smilo can collect."
+  },
+  {
+    "title": "Good Start",
+    "url": "https://codeforces.com/problemset/problem/2113/B",
+    "description": "The roof is a rectangle of size w×hw \\times h with the bottom left corner at the point (0,0)(0, 0) on the plane. Your team needs to completely cover this roof with identical roofing sheets of size a×ba \\times b, with the following conditions:  The sheets cannot be rotated (not even by 90∘90^\\circ).  The sheets must not overlap (but they can touch at the edges).  The sheets can extend beyond the boundaries of the rectangular roof. A novice from your team has already placed two such sheets on the roof in such a way that the sheets do not overlap and each of them partially covers the roof.Your task is to determine whether it is possible to completely tile the roof without removing either of the two already placed sheets."
+  },
+  {
+    "title": "Shashliks",
+    "url": "https://codeforces.com/problemset/problem/2113/A",
+    "description": "You are the owner of a popular shashlik restaurant, and your grill is the heart of your kitchen. However, the grill has a peculiarity: after cooking each shashlik, its temperature drops.You need to cook as many portions of shashlik as possible, and you have an unlimited number of portions of two types available for cooking: The first type requires a temperature of at least aa degrees at the start of cooking, and after cooking, the grill's temperature decreases by xx degrees. The second type requires a temperature of at least bb degrees at the start of cooking, and after cooking, the grill's temperature decreases by yy degrees.Initially, the grill's temperature is kk degrees. Determine the maximum total number of portions of shashlik that can be cooked.Note that the grill's temperature can be negative."
+  },
+  {
+    "title": "Variables and Operations",
+    "url": "https://codeforces.com/problemset/problem/2112/F",
+    "description": "There are nn variables; let's denote the value of the ii-th variable as aia_i.There are also mm operations which will be applied to these variables; the ii-th operation is described by three integers xi,yi,zix_i, y_i, z_i. When the ii-th operation is applied, the variable xix_i gets assigned the following value: min(axi,ayi+zi)\\min(a_{x_i}, a_{y_i} + z_i).Every operation will be applied exactly once, but their order is not fixed; they can be applied in any order.Let's call a sequence of initial variable values a1,a2,…,ana_1, a_2, \\dots, a_n stable, if no matter in which order we apply operations, the resulting values will be the same. If the resulting value of the ii-th variable depends on the order of operations, then the sequence of initial variable values is called ii-unstable.You have to process qq queries. In each query, you will be given initial values a1,a2,…,ana_1, a_2, \\dots, a_n and an integer kk; before applying the operations, you can at most kk times choose a variable and decrease it by 11. For every variable ii, you have to independently determine if it is possible to transform the given values into an ii-unstable sequence."
+  },
+  {
+    "title": "Tree Colorings",
+    "url": "https://codeforces.com/problemset/problem/2112/E",
+    "description": "Consider a rooted undirected tree. Each vertex can be colored blue, green, or yellow. A coloring is called beautiful if it meets these conditions:   the root of the tree is green;  if you consider all blue and green vertices, they are reachable from each other without passing through any yellow vertices;  if you consider all yellow and green vertices, they are reachable from each other without passing through any blue vertices; You are given an integer mm. Your task is to calculate the minimum number of vertices in a tree with exactly mm beautiful colorings."
+  },
+  {
+    "title": "Reachability and Tree",
+    "url": "https://codeforces.com/problemset/problem/2112/D",
+    "description": "Let uu and vv be two distinct vertices in a directed graph. Let's call the ordered pair (u,v)(u, v) good if there exists a path from vertex uu to vertex vv along the edges of the graph.You are given an undirected tree with nn vertices and n−1n - 1 edges. Determine whether it is possible to assign a direction to each edge of this tree so that the number of good pairs in it is exactly nn. If it is possible, print any way to direct the edges resulting in exactly nn good pairs.  One possible directed version of the tree for the first test case. "
+  },
+  {
+    "title": "Coloring Game",
+    "url": "https://codeforces.com/problemset/problem/2112/C",
+    "description": "Alice and Bob are playing a game using an integer array aa of size nn.Initially, all elements of the array are colorless. First, Alice chooses 33 elements and colors them red. Then Bob chooses any element and colors it blue (if it was red — recolor it). Alice wins if the sum of the red elements is strictly greater than the value of the blue element.Your task is to calculate the number of ways that Alice can choose 33 elements in order to win regardless of Bob's actions."
+  },
+  {
+    "title": "Shrinking Array",
+    "url": "https://codeforces.com/problemset/problem/2112/B",
+    "description": "Let's call an array bb beautiful if it consists of at least two elements and there exists a position ii such that |bi−bi+1|≤1|b_i - b_{i + 1}| \\le 1 (where |x||x| is the absolute value of xx).You are given an array aa, and as long as it consists of at least two elements, you can perform the following operation:   Choose two adjacent positions ii and i+1i + 1 in the array aa.  Choose an integer xx such that min(ai,ai+1)≤x≤max(ai,ai+1)\\min(a_i, a_{i + 1}) \\le x \\le \\max(a_i, a_{i + 1}).  Remove the numbers aia_i and ai+1a_{i + 1} from the array, and insert the number xx in their place. Obviously, the size of the array will decrease by 11. Calculate the minimum number of operations required to make the array beautiful, or report that it is impossible."
+  },
+  {
+    "title": "Race",
+    "url": "https://codeforces.com/problemset/problem/2112/A",
+    "description": "Alice and Bob participate in a game TV show. When the game starts, the prize will be dropped to a certain point, and whoever gets to it first will get the prize.Alice decided that she would start running from point aa. Bob, however, has not yet chosen his starting position.Bob knows that the prize could drop either at point xx or at point yy. He also knows that he can reach the prize faster than Alice if the distance from his starting position to the prize is strictly less than the distance from Alice's starting position to the prize. The distance between any two points cc and dd is calculated as |c−d||c-d|.Your task is to determine whether Bob can choose an integer point that is guarantee to get to the prize faster, regardless of where it appears (at point xx or yy). Bob can choose any integer point, except for aa (in particular, he can choose to start in point xx, point yy, or any other point, but not aa)."
+  },
+  {
+    "title": "Divisible Subarrays",
+    "url": "https://codeforces.com/problemset/problem/2111/G",
+    "description": "Technically, this is an interactive problem.An array aa of mm numbers is called divisible if at least one of the following conditions holds:  There exists an index ii (1≤i<m1 \\le i < m) and an integer xx such that for all indices jj (j≤ij \\le i), it holds that aj≤xa_{j} \\le x and for all indices kk (k>ik > i), it holds that ak>xa_{k} > x.  There exists an index ii (1≤i<m1 \\le i < m) and an integer xx such that for all indices jj (j≤ij \\le i), it holds that aj>xa_{j} > x and for all indices kk (k>ik > i), it holds that ak≤xa_{k} \\le x. You are given a permutation pp of integers 1,2,…,n1, 2, \\dots, n. Your task is to answer queries of the following form fast: if we take only the segment [ll, rr] from the permutation, that is, the numbers pl,pl+1,…,prp_{l}, p_{l + 1}, \\dots, p_{r}, is this subarray of numbers divisible?Queries will be submitted in interactive mode in groups of 1010, meaning you will not receive the next group of queries until you output all answers for the current group."
+  },
+  {
+    "title": "Puzzle",
+    "url": "https://codeforces.com/problemset/problem/2111/F",
+    "description": "You have been gifted a puzzle, where each piece of this puzzle is a square with a side length of one. You can glue any picture onto this puzzle, cut it, and obtain an almost ordinary jigsaw puzzle.Your friend is an avid mathematician, so he suggested you consider the following problem. Is it possible to arrange the puzzle pieces in such a way that the following conditions are met:  the pieces are aligned parallel to the coordinate axes;  the pieces do not overlap each other;  all pieces form a single connected component (i.e., there exists a path from each piece to every other piece along the pieces, where each two consecutive pieces share a side);  the ratio of the perimeter of this component to the area of this component equals ps\\frac{p}{s};  the number of pieces used does not exceed 5000050\\,000. Can you handle it?    For this figure, the ratio of the perimeter to the area is 119\\frac{11}{9} "
+  },
+  {
+    "title": "Changing the String",
+    "url": "https://codeforces.com/problemset/problem/2111/E",
+    "description": "Given a string ss that consists only of the first three letters of the Latin alphabet, meaning each character of the string is either a, b, or c.Also given are qq operations that need to be performed on the string. In each operation, two letters xx and yy from the set of the first three letters of the Latin alphabet are provided, and for each operation, one of the following two actions must be taken:  change any (one) occurrence of the letter xx in the string ss to the letter yy (if at least one occurrence of the letter xx exists);  do nothing. The goal is to perform all operations in the given order in such a way that the string ss becomes lexicographically minimal.Recall that a string aa is lexicographically less than a string bb if and only if one of the following conditions holds:  aa is a prefix of bb, but a≠ba \\neq b;  at the first position where aa and bb differ, the string aa has a letter that comes earlier in the alphabet than the corresponding letter in bb. "
+  },
+  {
+    "title": "Creating a Schedule",
+    "url": "https://codeforces.com/problemset/problem/2111/D",
+    "description": "A new semester is about to begin, and it is necessary to create a schedule for the first day. There are a total of nn groups and mm classrooms in the faculty. It is also known that each group has exactly 66 classes on the first day, and the kk-th class of each group takes place at the same time. Each class must be held in a classroom, and at the same time, there cannot be classes for more than one group in the same classroom.Each classroom has its own index (at least three digits), and all digits of this index, except for the last two, indicate the floor on which the classroom is located. For example, classroom 479479 is located on the 44-th floor, while classroom 3141531415 is on the 314314-th floor. Between floors, one can move by stairs; for any floor x>1x > 1, one can either go down to floor x−1x - 1 or go up to floor x+1x + 1; from the first floor, one can only go up to the second; from the floor 10710^7 (which is the last one), it is possible to go only to the floor 99999999999999.The faculty's dean's office has decided to create the schedule in such a way that students move as much as possible between floors, meaning that the total number of movements between floors across all groups should be maximized. When the students move from one floor to another floor, they take the shortest path.For example, if there are n=2n = 2 groups and m=4m = 4 classrooms [479,290,478,293][479, 290, 478, 293], the schedule can be arranged as follows: Class No.Group 1Group 2112902902932932247847847947933293293290290444794794784785529329329029066479479478478 In such a schedule, the groups will move between the 22nd and 44th floors each time, resulting in a total of 2020 movements between floors.Help the dean's office create any suitable schedule!"
+  },
+  {
+    "title": "Equal Values",
+    "url": "https://codeforces.com/problemset/problem/2111/C",
+    "description": "You are given an array a1,a2,…,ana_1, a_2, \\dots, a_n, consisting of nn integers.In one operation, you are allowed to perform one of the following actions:   Choose a position ii (1<i≤n1 < i \\le n) and make all elements to the left of ii equal to aia_i. That is, assign the value aia_i to all aja_j (1≤j<i1 \\le j < i). The cost of such an operation is (i−1)⋅ai(i - 1) \\cdot a_i.  Choose a position ii (1≤i<n1 \\le i < n) and make all elements to the right of ii equal to aia_i. That is, assign the value aia_i to all aja_j (i<j≤ni < j \\le n). The cost of such an operation is (n−i)⋅ai(n - i) \\cdot a_i. Note that the elements affected by an operation may already be equal to aia_i, but that doesn't change the cost.You are allowed to perform any number of operations (including zero). What is the minimum total cost to make all elements of the array equal?"
+  },
+  {
+    "title": "Fibonacci Cubes",
+    "url": "https://codeforces.com/problemset/problem/2111/B",
+    "description": "There are nn Fibonacci cubes, where the side of the ii-th cube is equal to fif_{i}, where fif_{i} is the ii-th Fibonacci number.In this problem, the Fibonacci numbers are defined as follows:  f1=1f_{1} = 1  f2=2f_{2} = 2  fi=fi−1+fi−2f_{i} = f_{i - 1} + f_{i - 2} for i>2i > 2 There are also mm empty boxes, where the ii-th box has a width of wiw_{i}, a length of lil_{i}, and a height of hih_{i}.For each of the mm boxes, you need to determine whether all the cubes can fit inside that box. The cubes must be placed in the box following these rules:  The cubes can only be stacked in the box such that the sides of the cubes are parallel to the sides of the box;  Every cube must be placed either on the bottom of the box or on top of other cubes in such a way that all space below the cube is occupied;  A larger cube cannot be placed on top of a smaller cube. "
+  },
+  {
+    "title": "Energy Crystals",
+    "url": "https://codeforces.com/problemset/problem/2111/A",
+    "description": "There are three energy crystals numbered 11, 22, and 33; let's denote the energy level of the ii-th crystal as aia_i. Initially, all of them are discharged, meaning their energy levels are equal to 00. Each crystal needs to be charged to level xx (exactly xx, not greater).In one action, you can increase the energy level of any one crystal by any positive amount; however, the energy crystals are synchronized with each other, so an action can only be performed if the following condition is met afterward:  for each pair of crystals ii, jj, it must hold that ai≥⌊aj2⌋a_{i} \\ge \\lfloor\\frac{a_{j}}{2}\\rfloor. What is the minimum number of actions required to charge all the crystals?"
+  },
+  {
+    "title": "Faculty",
+    "url": "https://codeforces.com/problemset/problem/2110/F",
+    "description": "In 2077, after the world was enslaved by robots, the robots decided to implement an educational reform, and now the operation of taking the modulus is only taught in the faculty of \"Ancient World History\". Here is one of the entrance tasks for this faculty:We define the beauty of an array of positive integers bb as the maximum f(bi,bj)f(b_i, b_j) over all pairs 1≤i,j≤n1 \\leq i, j \\leq n, where f(x,y)=(xmody)+(ymodx)f(x, y) = (x \\bmod y) + (y \\bmod x).Given an array of positive integers aa of length nn, output nn numbers, where the ii-th number (1≤i≤n1 \\leq i \\leq n) is the beauty of the array a1,a2,…,aia_1, a_2, \\ldots, a_i.xmodyx \\bmod y is the remainder of the division of xx by yy."
+  },
+  {
+    "title": "Melody",
+    "url": "https://codeforces.com/problemset/problem/2110/E",
+    "description": "In 2077, the robots that took over the world realized that human music wasn't that great, so they started composing their own.To write music, the robots have a special musical instrument capable of producing nn different sounds. Each sound is characterized by its volume and pitch. A sequence of sounds is called music. Music is considered beautiful if any two consecutive sounds differ either only in volume or only in pitch. Music is considered boring if the volume or pitch of any three consecutive sounds is the same.You want to compose beautiful, non-boring music that contains each sound produced by your musical instrument exactly once."
+  },
+  {
+    "title": "Fewer Batteries",
+    "url": "https://codeforces.com/problemset/problem/2110/D",
+    "description": "In 2077, when robots took over the world, they decided to compete in the following game.There are nn checkpoints, and the ii-th checkpoint contains bib_i batteries. Initially, the Robot starts at the 11-st checkpoint with no batteries and must reach the nn-th checkpoint.There are a total of mm one-way passages between the checkpoints. The ii-th passage allows movement from point sis_i to point tit_i (si<tis_i < t_i), but not the other way. Additionally, the ii-th passage can only be used if the robot has at least wiw_i charged batteries; otherwise, it will run out of power on the way.When the robot arrives at point vv, it can additionally take any number of batteries from 00 to bvb_v, inclusive. Moreover, it always carries all previously collected batteries, and at each checkpoint, it recharges all previously collected batteries.Find the minimum number of batteries that the robot can have at the end of the journey, or report that it is impossible to reach from the first checkpoint to the last."
+  },
+  {
+    "title": "Racing",
+    "url": "https://codeforces.com/problemset/problem/2110/C",
+    "description": "In 2077, a sport called hobby-droning is gaining popularity among robots.You already have a drone, and you want to win. For this, your drone needs to fly through a course with nn obstacles.The ii-th obstacle is defined by two numbers li,ril_i, r_i. Let the height of your drone at the ii-th obstacle be hih_i. Then the drone passes through this obstacle if li≤hi≤ril_i \\le h_i \\le r_i. Initially, the drone is on the ground, meaning h0=0h_0 = 0.The flight program for the drone is represented by an array d1,d2,…,dnd_1, d_2, \\ldots, d_n, where hi−hi−1=dih_{i} - h_{i-1} = d_i, and 0≤di≤10 \\leq d_i \\leq 1. This means that your drone either does not change height between obstacles or rises by 11. You already have a flight program, but some did_i in it are unknown and marked as −1-1. Replace the unknown did_i with numbers 00 and 11 to create a flight program that passes through the entire obstacle course, or report that it is impossible."
+  },
+  {
+    "title": "Down with Brackets",
+    "url": "https://codeforces.com/problemset/problem/2110/B",
+    "description": "In 2077, robots decided to get rid of balanced bracket sequences once and for all!A bracket sequence is called balanced if it can be constructed by the following formal grammar.   The empty sequence ∅\\varnothing is balanced.  If the bracket sequence AA is balanced, then (A)\\mathtt{(}A\\mathtt{)} is also balanced.  If the bracket sequences AA and BB are balanced, then the concatenated sequence ABA B is also balanced. You are the head of the department for combating balanced bracket sequences, and your main task is to determine which brackets you can destroy and which you cannot.You are given a balanced bracket sequence represented by a string ss, consisting of the characters ( and ). Since the robots' capabilities are not limitless, they can remove exactly one opening bracket and exactly one closing bracket from the string.Your task is to determine whether the robots can delete such two brackets so that the string ss is no longer a balanced bracket sequence."
+  },
+  {
+    "title": "Fashionable Array",
+    "url": "https://codeforces.com/problemset/problem/2110/A",
+    "description": "In 2077, everything became fashionable among robots, even arrays...We will call an array of integers aa fashionable if min(a)+max(a)\\min(a) + \\max(a) is divisible by 22 without a remainder, where min(a)\\min(a) — the value of the minimum element of the array aa, and max(a)\\max(a) — the value of the maximum element of the array aa.You are given an array of integers a1,a2,…,ana_1, a_2, \\ldots, a_n. In one operation, you can remove any element from this array. Your task is to determine the minimum number of operations required to make the array aa fashionable."
+  },
+  {
+    "title": "Penguin Steps",
+    "url": "https://codeforces.com/problemset/problem/2109/F",
+    "description": "Mouf, the clever master of Darkness, and Fouad, the brave champion of Light, have entered the Grid Realm once more. This time, they have found the exit, but it is guarded by fierce monsters! They must fight with their bare hands instead of summoning monsters!Mouf and Fouad are standing on an n×nn \\times n grid. Each cell (i,j)(i, j) has a value ai,ja_{i,j} and a color. The color of a cell is white if ci,j=0c_{i,j} = 0 and black if ci,j=1c_{i,j} = 1.Mouf starts at the top-left corner (1,1)(1, 1), and Fouad starts at the bottom-left corner (n,1)(n, 1). Both are trying to reach the exit cell at (r,n)(r, n).A path is defined as a sequence of adjacent cells (sharing a horizontal or vertical edge). The cost of a path is the maximum value of ai,ja_{i, j} among all cells included in the path (including the first and last cells).Let:   disM\\mathrm{dis}_M denote the minimum possible cost of a valid path from Mouf's starting position (1,1)(1, 1) to the exit (r,n)(r, n);  disF\\mathrm{dis}_F denote the minimum possible cost of a valid path from Fouad's starting position (n,1)(n, 1) to the exit (r,n)(r, n). Before moving, Mouf can perform up to kk operations. In each operation, he may select any black cell and increment its value by 11 (possibly choosing the same cell multiple times).Mouf wants to maximize disF\\mathrm{dis}_F while ensuring that his own cost disM\\mathrm{dis}_M remains unchanged (as if he performed no operations). If Mouf acts optimally, what are the values of disM\\mathrm{dis}_M and disF\\mathrm{dis}_F?"
+  },
+  {
+    "title": "Binary String Wowee",
+    "url": "https://codeforces.com/problemset/problem/2109/E",
+    "description": "Mouf is bored with themes, so he decided not to use any themes for this problem.You are given a binary∗^{\\text{∗}} string ss of length nn. You are to perform the following operation exactly kk times:  select an index ii (1≤i≤n1 \\le i \\le n) such that si=0s_i = \\mathtt{0};  then flip†^{\\text{†}} each sjs_j for all indices jj (1≤j≤i1 \\le j \\le i). You need to count the number of possible ways to perform all kk operations. Since the answer could be ginormous, print it modulo 998244353998\\,244\\,353.Two sequences of operations are considered different if they differ in the index selected at any step.∗^{\\text{∗}}A binary string is a string that consists only of the characters 0\\mathtt{0} and 1\\mathtt{1}.†^{\\text{†}}Flipping a binary character is changing it from 0\\mathtt{0} to 1\\mathtt{1} or vice versa."
+  },
+  {
+    "title": "D/D/D",
+    "url": "https://codeforces.com/problemset/problem/2109/D",
+    "description": "Of course, a problem with the letter D is sponsored by Declan Akaba.You are given a simple, connected, undirected graph with nn vertices and mm edges. The graph contains no self-loops or multiple edges. You are also given a multiset AA consisting of ℓ\\ell elements: A={A1,A2,…,Aℓ} A = \\{A_1, A_2, \\ldots, A_\\ell\\} Starting from vertex 11, you may perform the following move any number of times, as long as the multiset AA is not empty:   Select an element k∈Ak \\in A and remove it from the multiset . You must remove exactly one occurrence of kk from AA.  Traverse any walk∗^{\\text{∗}} of exactly kk edges to reach some vertex (possibly the same one you started from). For each ii (1≤i≤n1 \\le i \\le n), determine whether there exists a sequence of such moves that starts at vertex 11 and ends at vertex ii, using the original multiset AA. Note that the check for each vertex ii is independent — you restart from vertex 11 and use the original multiset AA for each case.∗^{\\text{∗}}A walk of length kk is a sequence of vertices v0,v1,…,vk−1,vkv_0, v_1, \\ldots, v_{k - 1}, v_k such that each consecutive pair of vertices (vi,vi+1)(v_i, v_{i + 1}) is connected by an edge in the graph. The sequence may include repeated vertices."
+  },
+  {
+    "title": "Hacking Numbers (Hard Version)",
+    "url": "https://codeforces.com/problemset/problem/2109/C3",
+    "description": "This is the hard version of the problem. In this version, the limit of commands you can send is described in the statement. You can make hacks only if all versions of the problem are solved.This is an interactive problem.Welcome, Duelists! In this interactive challenge, there is an unknown integer xx (1≤x≤1091 \\le x \\le 10^9). You must make it equal to a given integer in the input nn. By harnessing the power of \"Mathmech\" monsters, you can send a command to do one of the following: CommandConstraintResultCaseUpdateJury's response\"add yy\"−1018≤y≤1018-10^{18} \\le y \\le 10^{18}res=x+y\\mathrm{res} = x + yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"mul yy\"1≤y≤10181 \\le y \\le 10^{18}res=x⋅y\\mathrm{res} = x \\cdot yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"div yy\"1≤y≤10181 \\le y \\le 10^{18}res=x/y\\mathrm{res} = x/yif y\\text{if } y divides xxx←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"digit\"—res=S(x)\\mathrm{res} = S(x)∗^{\\text{∗}}—x←resx \\leftarrow \\mathrm{res}\"1\" Let f(n)f(n) be the minimum integer such that there is a sequence of f(n)f(n) commands that transforms xx into nn for all x(1≤x≤109)x(1 \\le x \\le 10^9). You do not know the value of xx in advance. Find f(n)f(n) such that, no matter what xx is, you can always transform it into nn using at most f(n)f(n) commands.Your task is to change xx into nn using at most f(n)f(n) commands.∗^{\\text{∗}}S(n)S(n) is a function that returns the sum of all the individual digits of a non-negative integer nn. For example, S(123)=1+2+3=6S(123) = 1 + 2 + 3 = 6"
+  },
+  {
+    "title": "Hacking Numbers (Medium Version)",
+    "url": "https://codeforces.com/problemset/problem/2109/C2",
+    "description": "This is the medium version of the problem. In this version, you can send at most 4\\mathbf{4} commands. You can make hacks only if all versions of the problem are solved.This is an interactive problem.Welcome, Duelists! In this interactive challenge, there is an unknown integer xx (1≤x≤1091 \\le x \\le 10^9). You must make it equal to a given integer in the input nn. By harnessing the power of \"Mathmech\" monsters, you can send a command to do one of the following: CommandConstraintResultCaseUpdateJury's response\"add yy\"−1018≤y≤1018-10^{18} \\le y \\le 10^{18}res=x+y\\mathrm{res} = x + yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"mul yy\"1≤y≤10181 \\le y \\le 10^{18}res=x⋅y\\mathrm{res} = x \\cdot yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"div yy\"1≤y≤10181 \\le y \\le 10^{18}res=x/y\\mathrm{res} = x/yif y\\text{if } y divides xxx←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"digit\"—res=S(x)\\mathrm{res} = S(x)∗^{\\text{∗}}—x←resx \\leftarrow \\mathrm{res}\"1\" You have to make xx equal to nn using at most 4\\mathbf{4} commands.∗^{\\text{∗}}S(n)S(n) is a function that returns the sum of all the individual digits of a non-negative integer nn. For example, S(123)=1+2+3=6S(123) = 1 + 2 + 3 = 6"
+  },
+  {
+    "title": "Hacking Numbers (Easy Version)",
+    "url": "https://codeforces.com/problemset/problem/2109/C1",
+    "description": "This is the easy version of the problem. In this version, you can send at most 7\\mathbf{7} commands. You can make hacks only if all versions of the problem are solved.This is an interactive problem.Welcome, Duelists! In this interactive challenge, there is an unknown integer xx (1≤x≤1091 \\le x \\le 10^9). You must make it equal to a given integer in the input nn. By harnessing the power of \"Mathmech\" monsters, you can send a command to do one of the following: CommandConstraintResultCaseUpdateJury's response\"add yy\"−1018≤y≤1018-10^{18} \\le y \\le 10^{18}res=x+y\\mathrm{res} = x + yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"mul yy\"1≤y≤10181 \\le y \\le 10^{18}res=x⋅y\\mathrm{res} = x \\cdot yif 1≤res≤1018\\text{if } 1 \\le \\mathrm{res} \\le 10^{18}x←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"div yy\"1≤y≤10181 \\le y \\le 10^{18}res=x/y\\mathrm{res} = x/yif y\\text{if } y divides xxx←resx \\leftarrow \\mathrm{res}\"1\"else\\mathrm{else}x←xx \\leftarrow x\"0\"\"digit\"—res=S(x)\\mathrm{res} = S(x)∗^{\\text{∗}}—x←resx \\leftarrow \\mathrm{res}\"1\" You have to make xx equal to nn using at most 7\\mathbf{7} commands.∗^{\\text{∗}}S(n)S(n) is a function that returns the sum of all the individual digits of a non-negative integer nn. For example, S(123)=1+2+3=6S(123) = 1 + 2 + 3 = 6"
+  },
+  {
+    "title": "Maximum Number of Events That Can Be Attended II",
+    "url": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii?envType=daily-question&envId=2025-07-08",
+    "description": "You are given an array of events where events[i] = [startDayi, endDayi, valuei]. The ith event starts at startDayi and ends at endDayi, and if you attend this event, you will receive a value of valuei. You are also given an integer k which represents the maximum number of events you can attend. You can only attend one event at a time. If you choose to attend an event, you must attend the entire event. Note that the end day is inclusive: that is, you cannot attend two events where one of them starts and the other ends on the same day. Return the maximum sum of values that you can receive by attending events."
+  },
+  {
+    "title": "Two Sum",
+    "url": "https://leetcode.com/problems/two-sum",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order."
+  },
+  {
+    "title": "Add Two Numbers",
+    "url": "https://leetcode.com/problems/add-two-numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself."
+  },
+  {
+    "title": "Longest Substring Without Repeating Characters",
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters",
+    "description": "Given a string s, find the length of the longest substring without duplicate characters."
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "url": "https://leetcode.com/problems/median-of-two-sorted-arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n))."
+  },
+  {
+    "title": "Longest Palindromic Substring",
+    "url": "https://leetcode.com/problems/longest-palindromic-substring",
+    "description": "Given a string s, return the longest palindromic substring in s."
+  },
+  {
+    "title": "Zigzag Conversion",
+    "url": "https://leetcode.com/problems/zigzag-conversion",
+    "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) And then read line by line: \"PAHNAPLSIIGYIR\" Write the code that will take a string and make this conversion given a number of rows:"
+  },
+  {
+    "title": "Reverse Integer",
+    "url": "https://leetcode.com/problems/reverse-integer",
+    "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0. Assume the environment does not allow you to store 64-bit integers (signed or unsigned)."
+  },
+  {
+    "title": "String to Integer (atoi)",
+    "url": "https://leetcode.com/problems/string-to-integer-atoi",
+    "description": "Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer. The algorithm for myAtoi(string s) is as follows: Return the integer as the final result."
+  },
+  {
+    "title": "Palindrome Number",
+    "url": "https://leetcode.com/problems/palindrome-number",
+    "description": "Given an integer x, return true if x is a palindrome, and false otherwise."
+  },
+  {
+    "title": "Regular Expression Matching",
+    "url": "https://leetcode.com/problems/regular-expression-matching",
+    "description": "Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where: The matching should cover the entire input string (not partial)."
+  },
+  {
+    "title": "Container With Most Water",
+    "url": "https://leetcode.com/problems/container-with-most-water",
+    "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water. Return the maximum amount of water a container can store. Notice that you may not slant the container."
+  },
+  {
+    "title": "Integer to Roman",
+    "url": "https://leetcode.com/problems/integer-to-roman",
+    "description": "Seven different symbols represent Roman numerals with the following values: Roman numerals are formed by appending the conversions of decimal place values from highest to lowest. Converting a decimal place value into a Roman numeral has the following rules: Given an integer, convert it to a Roman numeral."
+  },
+  {
+    "title": "Roman to Integer",
+    "url": "https://leetcode.com/problems/roman-to-integer",
+    "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II. Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used: Given a roman numeral, convert it to an integer."
+  },
+  {
+    "title": "Longest Common Prefix",
+    "url": "https://leetcode.com/problems/longest-common-prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\"."
+  },
+  {
+    "title": "3Sum",
+    "url": "https://leetcode.com/problems/3sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets."
+  },
+  {
+    "title": "3Sum Closest",
+    "url": "https://leetcode.com/problems/3sum-closest",
+    "description": "Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution."
+  },
+  {
+    "title": "Letter Combinations of a Phone Number",
+    "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order. A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters."
+  },
+  {
+    "title": "4Sum",
+    "url": "https://leetcode.com/problems/4sum",
+    "description": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: You may return the answer in any order."
+  },
+  {
+    "title": "Remove Nth Node From End of List",
+    "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list",
+    "description": "Given the head of a linked list, remove the nth node from the end of the list and return its head."
+  },
+  {
+    "title": "Valid Parentheses",
+    "url": "https://leetcode.com/problems/valid-parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if:"
+  },
+  {
+    "title": "Merge Two Sorted Lists",
+    "url": "https://leetcode.com/problems/merge-two-sorted-lists",
+    "description": "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list."
+  },
+  {
+    "title": "Generate Parentheses",
+    "url": "https://leetcode.com/problems/generate-parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses."
+  },
+  {
+    "title": "Merge k Sorted Lists",
+    "url": "https://leetcode.com/problems/merge-k-sorted-lists",
+    "description": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it."
+  },
+  {
+    "title": "Swap Nodes in Pairs",
+    "url": "https://leetcode.com/problems/swap-nodes-in-pairs",
+    "description": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)"
+  },
+  {
+    "title": "Reverse Nodes in k-Group",
+    "url": "https://leetcode.com/problems/reverse-nodes-in-k-group",
+    "description": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is. You may not alter the values in the list's nodes, only nodes themselves may be changed."
+  },
+  {
+    "title": "Remove Duplicates from Sorted Array",
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array",
+    "description": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums. Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things: Custom Judge: The judge will test your solution with the following code: If all assertions pass, then your solution will be accepted."
+  },
+  {
+    "title": "Remove Element",
+    "url": "https://leetcode.com/problems/remove-element",
+    "description": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val. Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things: Custom Judge: The judge will test your solution with the following code: If all assertions pass, then your solution will be accepted."
+  },
+  {
+    "title": "Find the Index of the First Occurrence in a String",
+    "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string",
+    "description": "Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack."
+  },
+  {
+    "title": "Divide Two Integers",
+    "url": "https://leetcode.com/problems/divide-two-integers",
+    "description": "Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator. The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2. Return the quotient after dividing dividend by divisor. Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231."
+  },
+  {
+    "title": "Substring with Concatenation of All Words",
+    "url": "https://leetcode.com/problems/substring-with-concatenation-of-all-words",
+    "description": "You are given a string s and an array of strings words. All the strings of words are of the same length. A concatenated string is a string that exactly contains all the strings of any permutation of words concatenated. Return an array of the starting indices of all the concatenated substrings in s. You can return the answer in any order."
+  },
+  {
+    "title": "Next Permutation",
+    "url": "https://leetcode.com/problems/next-permutation",
+    "description": "A permutation of an array of integers is an arrangement of its members into a sequence or linear order. The next permutation of an array of integers is the next lexicographically greater permutation of its integer. More formally, if all the permutations of the array are sorted in one container according to their lexicographical order, then the next permutation of that array is the permutation that follows it in the sorted container. If such arrangement is not possible, the array must be rearranged as the lowest possible order (i.e., sorted in ascending order). Given an array of integers nums, find the next permutation of nums. The replacement must be in place and use only constant extra memory."
+  },
+  {
+    "title": "Longest Valid Parentheses",
+    "url": "https://leetcode.com/problems/longest-valid-parentheses",
+    "description": "Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring."
+  },
+  {
+    "title": "Search in Rotated Sorted Array",
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array",
+    "description": "There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums. You must write an algorithm with O(log n) runtime complexity."
+  },
+  {
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array",
+    "description": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity."
+  },
+  {
+    "title": "Search Insert Position",
+    "url": "https://leetcode.com/problems/search-insert-position",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity."
+  },
+  {
+    "title": "Valid Sudoku",
+    "url": "https://leetcode.com/problems/valid-sudoku",
+    "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: Note:"
+  },
+  {
+    "title": "Sudoku Solver",
+    "url": "https://leetcode.com/problems/sudoku-solver",
+    "description": "Write a program to solve a Sudoku puzzle by filling the empty cells. A sudoku solution must satisfy all of the following rules: The '.' character indicates empty cells."
+  },
+  {
+    "title": "Count and Say",
+    "url": "https://leetcode.com/problems/count-and-say",
+    "description": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula: Run-length encoding (RLE) is a string compression method that works by replacing consecutive identical characters (repeated 2 or more times) with the concatenation of the character and the number marking the count of the characters (length of the run). For example, to compress the string \"3322251\" we replace \"33\" with \"23\", replace \"222\" with \"32\", replace \"5\" with \"15\" and replace \"1\" with \"11\". Thus the compressed string becomes \"23321511\". Given a positive integer n, return the nth element of the count-and-say sequence."
+  },
+  {
+    "title": "Combination Sum",
+    "url": "https://leetcode.com/problems/combination-sum",
+    "description": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different. The test cases are generated such that the number of unique combinations that sum up to target is less than 150 combinations for the given input."
+  },
+  {
+    "title": "Combination Sum II",
+    "url": "https://leetcode.com/problems/combination-sum-ii",
+    "description": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination. Note: The solution set must not contain duplicate combinations."
+  },
+  {
+    "title": "First Missing Positive",
+    "url": "https://leetcode.com/problems/first-missing-positive",
+    "description": "Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums. You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space."
+  },
+  {
+    "title": "Trapping Rain Water",
+    "url": "https://leetcode.com/problems/trapping-rain-water",
+    "description": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining."
+  },
+  {
+    "title": "Multiply Strings",
+    "url": "https://leetcode.com/problems/multiply-strings",
+    "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string. Note: You must not use any built-in BigInteger library or convert the inputs to integer directly."
+  },
+  {
+    "title": "Wildcard Matching",
+    "url": "https://leetcode.com/problems/wildcard-matching",
+    "description": "Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where: The matching should cover the entire input string (not partial)."
+  },
+  {
+    "title": "Jump Game II",
+    "url": "https://leetcode.com/problems/jump-game-ii",
+    "description": "You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0]. Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where: Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1]."
+  },
+  {
+    "title": "Permutations",
+    "url": "https://leetcode.com/problems/permutations",
+    "description": "Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order."
+  },
+  {
+    "title": "Permutations II",
+    "url": "https://leetcode.com/problems/permutations-ii",
+    "description": "Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order."
+  },
+  {
+    "title": "Rotate Image",
+    "url": "https://leetcode.com/problems/rotate-image",
+    "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise). You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation."
+  },
+  {
+    "title": "Group Anagrams",
+    "url": "https://leetcode.com/problems/group-anagrams",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order."
+  },
+  {
+    "title": "Pow(x, n)",
+    "url": "https://leetcode.com/problems/powx-n",
+    "description": "Implement pow(x, n), which calculates x raised to the power n (i.e., xn)."
+  },
+  {
+    "title": "N-Queens",
+    "url": "https://leetcode.com/problems/n-queens",
+    "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order. Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively."
+  },
+  {
+    "title": "N-Queens II",
+    "url": "https://leetcode.com/problems/n-queens-ii",
+    "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Given an integer n, return the number of distinct solutions to the n-queens puzzle."
+  },
+  {
+    "title": "Maximum Subarray",
+    "url": "https://leetcode.com/problems/maximum-subarray",
+    "description": "Given an integer array nums, find the subarray with the largest sum, and return its sum."
+  },
+  {
+    "title": "Spiral Matrix",
+    "url": "https://leetcode.com/problems/spiral-matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order."
+  },
+  {
+    "title": "Jump Game",
+    "url": "https://leetcode.com/problems/jump-game",
+    "description": "You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Return true if you can reach the last index, or false otherwise."
+  },
+  {
+    "title": "Merge Intervals",
+    "url": "https://leetcode.com/problems/merge-intervals",
+    "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input."
+  },
+  {
+    "title": "Insert Interval",
+    "url": "https://leetcode.com/problems/insert-interval",
+    "description": "You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval. Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary). Return intervals after the insertion. Note that you don't need to modify intervals in-place. You can make a new array and return it."
+  },
+  {
+    "title": "Length of Last Word",
+    "url": "https://leetcode.com/problems/length-of-last-word",
+    "description": "Given a string s consisting of words and spaces, return the length of the last word in the string. A word is a maximal substring consisting of non-space characters only."
+  },
+  {
+    "title": "Spiral Matrix II",
+    "url": "https://leetcode.com/problems/spiral-matrix-ii",
+    "description": "Given a positive integer n, generate an n x n matrix filled with elements from 1 to n2 in spiral order."
+  },
+  {
+    "title": "Permutation Sequence",
+    "url": "https://leetcode.com/problems/permutation-sequence",
+    "description": "The set [1, 2, 3, ..., n] contains a total of n! unique permutations. By listing and labeling all of the permutations in order, we get the following sequence for n = 3: Given n and k, return the kth permutation sequence."
+  },
+  {
+    "title": "Rotate List",
+    "url": "https://leetcode.com/problems/rotate-list",
+    "description": "Given the head of a linked list, rotate the list to the right by k places."
+  },
+  {
+    "title": "Unique Paths",
+    "url": "https://leetcode.com/problems/unique-paths",
+    "description": "There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time. Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner. The test cases are generated so that the answer will be less than or equal to 2 * 109."
+  },
+  {
+    "title": "Unique Paths II",
+    "url": "https://leetcode.com/problems/unique-paths-ii",
+    "description": "You are given an m x n integer array grid. There is a robot initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time. An obstacle and space are marked as 1 or 0 respectively in grid. A path that the robot takes cannot include any square that is an obstacle. Return the number of possible unique paths that the robot can take to reach the bottom-right corner. The testcases are generated so that the answer will be less than or equal to 2 * 109."
+  },
+  {
+    "title": "Minimum Path Sum",
+    "url": "https://leetcode.com/problems/minimum-path-sum",
+    "description": "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path. Note: You can only move either down or right at any point in time."
+  },
+  {
+    "title": "Valid Number",
+    "url": "https://leetcode.com/problems/valid-number",
+    "description": "Given a string s, return whether s is a valid number.\n\nFor example, all the following are valid numbers: \"2\", \"0089\", \"-0.1\", \"+3.14\", \"4.\", \"-.9\", \"2e10\", \"-90E3\", \"3e+7\", \"+6e-1\", \"53.5e93\", \"-123.456e789\", while the following are not valid numbers: \"abc\", \"1a\", \"1e\", \"e3\", \"99e2.5\", \"--6\", \"-+3\", \"95a54e53\". Formally, a valid number is defined using one of the following definitions: An integer number is defined with an optional sign '-' or '+' followed by digits. A decimal number is defined with an optional sign '-' or '+' followed by one of the following definitions: An exponent is defined with an exponent notation 'e' or 'E' followed by an integer number. The digits are defined as one or more digits."
+  },
+  {
+    "title": "Plus One",
+    "url": "https://leetcode.com/problems/plus-one",
+    "description": "You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's. Increment the large integer by one and return the resulting array of digits."
+  },
+  {
+    "title": "Add Binary",
+    "url": "https://leetcode.com/problems/add-binary",
+    "description": "Given two binary strings a and b, return their sum as a binary string."
+  },
+  {
+    "title": "Text Justification",
+    "url": "https://leetcode.com/problems/text-justification",
+    "description": "Given an array of strings words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified. You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters. Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right. For the last line of text, it should be left-justified, and no extra space is inserted between words. Note:"
+  },
+  {
+    "title": "Sqrt(x)",
+    "url": "https://leetcode.com/problems/sqrtx",
+    "description": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well. You must not use any built-in exponent function or operator."
+  },
+  {
+    "title": "Climbing Stairs",
+    "url": "https://leetcode.com/problems/climbing-stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?"
+  },
+  {
+    "title": "Simplify Path",
+    "url": "https://leetcode.com/problems/simplify-path",
+    "description": "You are given an absolute path for a Unix-style file system, which always begins with a slash '/'. Your task is to transform this absolute path into its simplified canonical path. The rules of a Unix-style file system are as follows: The simplified canonical path should follow these rules: Return the simplified canonical path."
+  },
+  {
+    "title": "Edit Distance",
+    "url": "https://leetcode.com/problems/edit-distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You have the following three operations permitted on a word:"
+  },
+  {
+    "title": "Set Matrix Zeroes",
+    "url": "https://leetcode.com/problems/set-matrix-zeroes",
+    "description": "Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's. You must do it in place."
+  },
+  {
+    "title": "Search a 2D Matrix",
+    "url": "https://leetcode.com/problems/search-a-2d-matrix",
+    "description": "You are given an m x n integer matrix matrix with the following two properties: Given an integer target, return true if target is in matrix or false otherwise. You must write a solution in O(log(m * n)) time complexity."
+  },
+  {
+    "title": "Sort Colors",
+    "url": "https://leetcode.com/problems/sort-colors",
+    "description": "Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively. You must solve this problem without using the library's sort function."
+  },
+  {
+    "title": "Minimum Window Substring",
+    "url": "https://leetcode.com/problems/minimum-window-substring",
+    "description": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\". The testcases will be generated such that the answer is unique."
+  },
+  {
+    "title": "Combinations",
+    "url": "https://leetcode.com/problems/combinations",
+    "description": "Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n]. You may return the answer in any order."
+  },
+  {
+    "title": "Subsets",
+    "url": "https://leetcode.com/problems/subsets",
+    "description": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order."
+  },
+  {
+    "title": "Word Search",
+    "url": "https://leetcode.com/problems/word-search",
+    "description": "Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once."
+  },
+  {
+    "title": "Remove Duplicates from Sorted Array II",
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii",
+    "description": "Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same. Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements. Return k after placing the final result in the first k slots of nums. Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory. Custom Judge: The judge will test your solution with the following code: If all assertions pass, then your solution will be accepted."
+  },
+  {
+    "title": "Search in Rotated Sorted Array II",
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii",
+    "description": "There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values). Before being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4]. Given the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums. You must decrease the overall operation steps as much as possible."
+  },
+  {
+    "title": "Remove Duplicates from Sorted List II",
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii",
+    "description": "Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well."
+  },
+  {
+    "title": "Remove Duplicates from Sorted List",
+    "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-list",
+    "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well."
+  },
+  {
+    "title": "Largest Rectangle in Histogram",
+    "url": "https://leetcode.com/problems/largest-rectangle-in-histogram",
+    "description": "Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram."
+  },
+  {
+    "title": "Maximal Rectangle",
+    "url": "https://leetcode.com/problems/maximal-rectangle",
+    "description": "Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area."
+  },
+  {
+    "title": "Partition List",
+    "url": "https://leetcode.com/problems/partition-list",
+    "description": "Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the nodes in each of the two partitions."
+  },
+  {
+    "title": "Scramble String",
+    "url": "https://leetcode.com/problems/scramble-string",
+    "description": "We can scramble a string s to get a string t using the following algorithm: Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false."
+  },
+  {
+    "title": "Merge Sorted Array",
+    "url": "https://leetcode.com/problems/merge-sorted-array",
+    "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array sorted in non-decreasing order. The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n."
+  },
+  {
+    "title": "Gray Code",
+    "url": "https://leetcode.com/problems/gray-code",
+    "description": "An n-bit gray code sequence is a sequence of 2n integers where: Given an integer n, return any valid n-bit gray code sequence."
+  },
+  {
+    "title": "Subsets II",
+    "url": "https://leetcode.com/problems/subsets-ii",
+    "description": "Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order."
+  },
+  {
+    "title": "Decode Ways",
+    "url": "https://leetcode.com/problems/decode-ways",
+    "description": "You have intercepted a secret message encoded as a string of numbers. The message is decoded via the following mapping: \"1\" -> 'A'\n\n\"2\" -> 'B'\n\n...\n\n\"25\" -> 'Y'\n\n\"26\" -> 'Z' However, while decoding the message, you realize that there are many different ways you can decode the message because some codes are contained in other codes (\"2\" and \"5\" vs \"25\"). For example, \"11106\" can be decoded into: Note: there may be strings that are impossible to decode.\n\nGiven a string s containing only digits, return the number of ways to decode it. If the entire string cannot be decoded in any valid way, return 0. The test cases are generated so that the answer fits in a 32-bit integer."
+  },
+  {
+    "title": "Reverse Linked List II",
+    "url": "https://leetcode.com/problems/reverse-linked-list-ii",
+    "description": "Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list."
+  },
+  {
+    "title": "Restore IP Addresses",
+    "url": "https://leetcode.com/problems/restore-ip-addresses",
+    "description": "A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros. Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. You are not allowed to reorder or remove any digits in s. You may return the valid IP addresses in any order."
+  },
+  {
+    "title": "Binary Tree Inorder Traversal",
+    "url": "https://leetcode.com/problems/binary-tree-inorder-traversal",
+    "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values."
+  },
+  {
+    "title": "Unique Binary Search Trees II",
+    "url": "https://leetcode.com/problems/unique-binary-search-trees-ii",
+    "description": "Given an integer n, return all the structurally unique BST's (binary search trees), which has exactly n nodes of unique values from 1 to n. Return the answer in any order."
+  },
+  {
+    "title": "Unique Binary Search Trees",
+    "url": "https://leetcode.com/problems/unique-binary-search-trees",
+    "description": "Given an integer n, return the number of structurally unique BST's (binary search trees) which has exactly n nodes of unique values from 1 to n."
+  },
+  {
+    "title": "Interleaving String",
+    "url": "https://leetcode.com/problems/interleaving-string",
+    "description": "Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2. An interleaving of two strings s and t is a configuration where s and t are divided into n and m substrings respectively, such that: Note: a + b is the concatenation of strings a and b."
+  },
+  {
+    "title": "Validate Binary Search Tree",
+    "url": "https://leetcode.com/problems/validate-binary-search-tree",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows:"
+  },
+  {
+    "title": "Recover Binary Search Tree",
+    "url": "https://leetcode.com/problems/recover-binary-search-tree",
+    "description": "You are given the root of a binary search tree (BST), where the values of exactly two nodes of the tree were swapped by mistake. Recover the tree without changing its structure."
+  }
+]

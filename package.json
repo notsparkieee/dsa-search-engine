@@ -16,6 +16,7 @@
   "main": "index.js",
   "scripts": {
     "scrape": "node scrape.js",
+    "merge": "node utils/merge.js"
   },
   "dependencies": {
     "puppeteer": "^24.10.2"
