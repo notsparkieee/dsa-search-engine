@@ -1,39 +1,74 @@
-import puppeteer from "puppeteer";
+import express from "express";
+import fs from "fs/promises";
+import pkg from "natural";
+import { removeStopwords } from "stopword";
+const { TfIdf } = pkg;
 
-const getQuotes = async () => {
-  // Start a Puppeteer session with:
-  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
-  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
-  const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
+function preprocess(text) {
+  return removeStopwords(
+    text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, "")
+      .split(/\s+/)
+  ).join(" ");
+}
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use(express.static("."));
+
+let problems = [];
+let tfidf = new TfIdf();
+
+async function loadProblemsAndBuildIndex() {
+  const data = await fs.readFile("./corpus/all_problems.json", "utf-8");
+  problems = JSON.parse(data);
+
+  tfidf = new TfIdf();
+
+  problems.forEach((problem, idx) => {
+    const text = preprocess(
+      `${problem.title} ${problem.title} ${problem.description || ""}`
+    );
+
+    tfidf.addDocument(text, idx.toString());
+  });
+}
+
+app.post("/search", async (req, res) => {
+  const query = preprocess(req.body.query);
+
+  if (!query || typeof query !== "string") {
+    return res
+      .status(400)
+      .json({ error: "Missing or invalid 'query' in request body" });
+  }
+
+  const scores = [];
+
+  tfidf.tfidfs(query, (i, measure) => {
+    scores.push({ idx: i, score: measure });
   });
 
-  // Open a new page
-  const page = await browser.newPage();
+  const top = scores
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10)
+    .map((s) => {
+      const p = problems[s.idx];
 
-  await page.goto("http://quotes.toscrape.com/", {
-    waitUntil: "domcontentloaded",
-  });
+      let platform = p.url.includes("leetcode.com") ? "LeetCode" : "Codeforces";
 
-  // Get page data
-  const quotes = await page.evaluate(() => {
-    const quoteList = document.querySelectorAll(".quote");
-
-    return Array.from(quoteList).map((quote) => {
-      const text = quote.querySelector(".text").innerText;
-      const author = quote.querySelector(".author").innerText;
-
-      return { text, author };
+      return { ...p, platform };
     });
+
+  res.json({ results: top });
+});
+
+loadProblemsAndBuildIndex().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
   });
-
-  console.log(quotes);
-
-  await page.click(".pager > .next > a");
-
-  await browser.close();
-};
-
-// Start the scraping
-getQuotes();
+});

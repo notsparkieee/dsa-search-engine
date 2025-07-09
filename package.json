@@ -16,9 +16,16 @@
   "main": "index.js",
   "scripts": {
     "scrape": "node scrape.js",
-    "merge": "node utils/merge.js"
+    "merge": "node utils/merge.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "puppeteer": "^24.10.2"
+    "express": "^5.1.0",
+    "natural": "^8.1.0",
+    "puppeteer": "^24.10.2",
+    "stopword": "^3.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
