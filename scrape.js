@@ -16,16 +16,16 @@ async function scrapeLeetcodeProblems() {
       "Chrome/114.0.5735.199 Safari/537.36"
   );
 
-  await page.goto("https://leetcode.com/problemset/");
+  await page.goto("https://leetcode.com/problemset/", {
+    waitUntil: "domcontentloaded",
+  });
 
   const problemSelector =
     "a.group.flex.flex-col.rounded-\\[8px\\].duration-300";
 
-  await page.waitForSelector('a[id="1"]');
-
   let allProblems = [];
   let prevCount = 0;
-  const TARGET = 100;
+  const TARGET = 500;
 
   while (allProblems.length < TARGET) {
     await page.evaluate((sel) => {
@@ -61,13 +61,10 @@ async function scrapeLeetcodeProblems() {
     prevCount = allProblems.length;
   }
 
-  // Now, for each problem, visit its URL and extract the description
   const problemsWithDescriptions = [];
 
-  for (let i = 0; i < TARGET; i++) {
+  for (let i = 0; i < 5; i++) {
     const { title, url } = allProblems[i];
-
-    if (!url) continue;
 
     const problemPage = await browser.newPage();
 
@@ -78,8 +75,6 @@ async function scrapeLeetcodeProblems() {
         const descriptionDiv = document.querySelector(
           'div.elfjS[data-track-load="description_content"]'
         );
-
-        if (!descriptionDiv) return "";
 
         const paragraphs = descriptionDiv.querySelectorAll("p");
 
@@ -130,28 +125,37 @@ async function scrapeCodeforcesProblems() {
   const problems = [];
   const TARGET = 1;
 
-  for (let i = 1; i <= TARGET; i++) {
+  for (let i = 0; i < TARGET; i++) {
     const url = `https://codeforces.com/problemset/page/${i}`;
+
     await page.goto(url, { waitUntil: "domcontentloaded" });
 
-    const links = await page.$$eval(
-      "table.problems tr td:nth-of-type(2) > div:first-of-type > a",
-      (anchors) => anchors.map((a) => a.href)
-    );
+    const problemSelector =
+      "table.problems tr td:nth-of-type(2) > div:first-of-type > a";
 
-    for (const link of links) {
+    const links = await page.evaluate((sel) => {
+      const anchors = document.querySelectorAll(sel);
+
+      return Array.from(anchors).map((a) => a.href);
+    }, problemSelector);
+
+    for (let i = 0; i < 5; i++) {
+      const link = links[i];
+
       try {
         await page.goto(link, { waitUntil: "domcontentloaded" });
 
-        const title = await page.$eval(
-          ".problem-statement .title",
-          (el) => el.textContent.split(". ")[1]
-        );
+        const { title, description } = await page.evaluate(() => {
+          const title = document
+            .querySelector(".problem-statement .title")
+            .textContent.split(". ")[1];
 
-        const description = await page.$eval(
-          ".problem-statement > div:nth-of-type(2)",
-          (elem) => elem.textContent
-        );
+          const description = document.querySelector(
+            ".problem-statement > div:nth-of-type(2)"
+          ).textContent;
+
+          return { title, description };
+        });
 
         problems.push({
           title,
@@ -174,5 +178,6 @@ async function scrapeCodeforcesProblems() {
   await browser.close();
 }
 
-scrapeLeetcodeProblems();
 scrapeCodeforcesProblems();
+
+scrapeLeetcodeProblems();
