@@ -25,7 +25,7 @@ async function scrapeLeetcodeProblems() {
 
   let allProblems = [];
   let prevCount = 0;
-  const TARGET = 500;
+  const TARGET = 100;
 
   while (allProblems.length < TARGET) {
     await page.evaluate((sel) => {
@@ -125,7 +125,7 @@ async function scrapeCodeforcesProblems() {
   const problems = [];
   const TARGET = 1;
 
-  for (let i = 0; i < TARGET; i++) {
+  for (let i = 0; i <= TARGET; i++) {
     const url = `https://codeforces.com/problemset/page/${i}`;
 
     await page.goto(url, { waitUntil: "domcontentloaded" });
